@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard';
 import Comparisons from './components/Comparison';
 import Timeline from './components/Timeline';
 
+
 function App() {
   return (
     <div className="App">
