@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f5f5;
+  background-color: #f7f7f7;
   color: #2b2b2b;
 }
 
@@ -42,7 +42,7 @@ code {
 }
 
 .navContainer ul{
-  padding-top: 50px;
+  padding-top: 150px;
   list-style: none;
   text-align: left;
  
@@ -75,37 +75,43 @@ a{
 }
 
 /*logo*/
-.navContainer .logoContainer{
+.logo{
+  width: 80px;
+  float: left; 
+  margin-left: 40px;
+}
+
+/* .navContainer .logoContainer{
   background-image: url("../src/Logo.jpg");
   padding: 80px;
   margin-left: 30px;
   background-repeat: no-repeat;
   background-size: 80px;
  
-}
+} */
 .navContainer h1{
-  margin-top: -60px;
+  
   color: #2b2b2b;
-  font-size: 32px;
+  font-size: 28px;
   float: left;
   margin-left: 50px;
+  padding-top: 10px;
 }
 .navContainer p{
   color: #2b2b2b;
-  font-size: 14px;
+  font-size: 12px;
   float: left;
   margin-left: 50px;
-  margin-top: -20px;
+  padding-top: 5px;
+  
   
 }
+ .icon img{
+   width:20px;
+   float: left;
+   padding-right:10px;
+ }
 
-
-/* .icon1{
-  background-image: url("Icons/dashboard.png");
-  width: 20%;
-  padding:20px;
-  float: left;
-} */
 
 /*HEADER*/
 .Header{
@@ -189,9 +195,9 @@ a{
 }
 
 .scroll{
-  width: 130px;
+  width: 40px;
   margin-left: 40%;
-  margin-top: 5%;
+  margin-top: 7%;
 }
 
 /*Body of Info*/

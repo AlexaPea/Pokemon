@@ -19,7 +19,7 @@ const Dashboard = () => {
         <div className="Header">
             <div className="HeaderText">
                 <h2>WELCOME TO</h2>
-                <h1>Poke-Pal</h1>
+                <h1>Pok&eacute;-Pal</h1>
                 <p>Join us and lets discover more about our favourite Pokemon and the world they live in! Compare and analyze all the different pokemon and their strengths or take a look at the Poke-Timeline!</p>
 
                 <div className="buttons">
@@ -34,7 +34,7 @@ const Dashboard = () => {
 
         <div className="BodyBox">
             <div className="TextContainers">
-                <h1>Information Station</h1>
+                <h1>Pok&eacute; Centre</h1>
                 <p>Here is a summary of the informations our website provides!We aim to give our fellow Pokemon trainers all the information they need to become a Pokemon master!</p>  
             </div>
            
