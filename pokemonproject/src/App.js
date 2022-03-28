@@ -4,6 +4,12 @@ import Navigation from './components/Navigation';
 import Dashboard from './components/Dashboard';
 import Comparisons from './components/Comparison';
 import Timeline from './components/Timeline';
+import ChartOne from './components/ChartOne';
+import ChartTwo from './components/ChartTwo';
+import ChartThree from './components/ChartThree';
+import ChartFour from './components/ChartFour';
+import ChartFive from './components/ChartFive';
+
 
 
 function App() {
@@ -16,7 +22,8 @@ function App() {
         <Route path='/Comparisons' element = {<Comparisons/>}/>
         <Route path='/Timeline' element = {<Timeline/>}/>
       </Routes>
-      
+
+    
      
     </div>
   );

@@ -1,6 +1,10 @@
 import anxios from "axios";
 import scroll from '../Images/scroll.gif';
 import Charazard from '../Images/Charazard.jpg';
+import ChartOne from './ChartOne.js';
+import ChartTwo from './ChartTwo.js';
+import ChartThree from './ChartThree.js';
+
 
 
 
@@ -32,14 +36,61 @@ const Dashboard = () => {
             
         </div>
 
-        <div className="BodyBox">
+        <div className="BodyBox two">
             <div className="TextContainers">
                 <h1>Pok&eacute; Centre</h1>
                 <p>Here is a summary of the informations our website provides!We aim to give our fellow Pokemon trainers all the information they need to become a Pokemon master!</p>  
+                
+                <div className="ContentRow">
+
+                    <div className="Row-Block one">
+                        <h3>Content</h3>
+                        <p>blah blah blah</p>
+                    </div>
+
+                    <div className="Row-Block two">
+                        <h3>Content</h3>
+                        <p>blah blah blah</p>
+                    </div>
+
+                    <div className="Row-Block three">
+                        <h3>Content</h3>
+                        <p>blah blah blah</p>
+                    </div>
+
+                </div>
+
+                <div className="ContentContainer">
+
+                <div className="pokemonNum">
+                    <h3>Number of Pokemon</h3>
+                    <p>200</p>
+                </div>
+                <div className="pokemonNum">
+                    <h3>Number of Something</h3>
+                    <p>200</p>
+                </div>
+               
+                </div>
+
+</div>
+                
+                <div className="BarGraph_Dash">
+                    <ChartOne/>
+                </div>
+                <div className="DoughnutGraph_Dash">
+                    <ChartTwo/>
+                </div>
+                <div className="RadarGraph_Dash">
+                    <ChartThree/>
+                </div>
+               
+                
+      
             </div>
            
             
-        </div>
+    
         </>
     );
 

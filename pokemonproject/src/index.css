@@ -81,14 +81,7 @@ a{
   margin-left: 40px;
 }
 
-/* .navContainer .logoContainer{
-  background-image: url("../src/Logo.jpg");
-  padding: 80px;
-  margin-left: 30px;
-  background-repeat: no-repeat;
-  background-size: 80px;
- 
-} */
+
 .navContainer h1{
   
   color: #2b2b2b;
@@ -227,4 +220,110 @@ a{
   float: left;
   padding: 60px;
   
+}
+
+
+/*Dash row blocks*/
+.ContentRow{
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  
+
+}
+
+.Row-Block{
+  background-color: #ffffff;
+  float: left;
+  width: 28%;
+  height: 100px;
+  padding: 15px;
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-bottom: 5px;
+  box-shadow:
+  0  5px 10px rgba(154,160,185,0.05),
+  0 15px 40px rgba(166,173,201,0.2);
+  color: #ffffff;
+ 
+  
+
+  
+}
+
+.Row-Block.one{
+  background-color: #F4A261;
+
+}
+.Row-Block.two{
+  background-color: #2A9D8F;
+
+}
+.Row-Block.three{
+  background-color: #E9C46A;
+
+}
+.pokemonNum{
+  background-color: #ffffff;
+  float: left;
+  width: 16%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-right: 15px;
+  box-shadow:
+  0  5px 10px rgba(154,160,185,0.05),
+  0 15px 40px rgba(166,173,201,0.2);
+}
+
+
+/*Charts*/
+
+.BodyBox.two{
+  height:120vh;
+}
+
+.BarGraph_Dash{
+  
+  width: 400px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  float: left;
+  margin-left: 64px;
+  margin-top: -48px;
+  box-shadow:
+  0  5px 10px rgba(154,160,185,0.05),
+  0 15px 40px rgba(166,173,201,0.2);
+}
+
+.DoughnutGraph_Dash{
+  
+  width: 300px;
+  height:400px;
+ padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  float: left;
+  margin-left: 15px;
+  margin-top: -178px;
+  box-shadow:
+  0  5px 10px rgba(154,160,185,0.05),
+  0 15px 40px rgba(166,173,201,0.2);
+}
+
+.RadarGraph_Dash{
+  
+  width: 300px;
+  height:400px;
+ padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  float: left;
+  margin-left: 15px;
+  margin-top: -178px;
+  box-shadow:
+  0  5px 10px rgba(154,160,185,0.05),
+  0 15px 40px rgba(166,173,201,0.2);
 }
