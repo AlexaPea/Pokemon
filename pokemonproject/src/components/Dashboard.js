@@ -1,6 +1,6 @@
 import anxios from "axios";
 import scroll from '../Images/scroll.gif';
-import Charazard from '../Images/Charazard.jpg';
+import Charazard from '../Images/Char.png';
 import ChartOne from './ChartOne.js';
 import ChartTwo from './ChartTwo.js';
 import ChartThree from './ChartThree.js';
