@@ -43,6 +43,7 @@ const ChartFive = () =>{
              
 
               options={{ maintainAspectRatio: true,
+                responsive: true,
                 plugins: {  // 'legend' now within object 'plugins {}'
                   legend: {
                     labels: {
