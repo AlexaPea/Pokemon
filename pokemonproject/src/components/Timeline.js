@@ -24,11 +24,11 @@ const Timeline = () => {
 
             <div class="ContentContainer">
                 <div className="OptionsRow">
-                    <div className="Option one">Option</div>
-                    <div className="Option two">Option</div>
-                    <div className="Option three">Option</div>
-                    <div className="Option four">Option</div>
-                    <div className="Option five">Option</div>
+                    <div className="OptionButton one">Option</div>
+                    <div className="OptionButton two">Option</div>
+                    <div className="OptionButton three">Option</div>
+                    <div className="OptionButton four">Option</div>
+                    <div className="OptionButton five">Option</div>
                 </div>
 
                 <div class="timeline_graph">

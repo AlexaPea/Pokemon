@@ -9,7 +9,7 @@ const Comparisons = () => {
            <div className="BodyBox Comparisons">
             <div className="TextContainers">
                 <h1>Cradily Comparisons</h1>
-                <p>Here is a summary of the informations our website provides!We aim to give our fellow Pokemon trainers all the information they need to become a Pokemon master!</p>  
+                <p>Select any Pokemon of your choosing and compare their abilities! Lets see who would win in battle - better be prepared for your next tournament!</p>  
             </div>
 
             <div className='contentContainer'>

@@ -196,7 +196,7 @@ a{
 .scroll{
   width: 40px;
   margin-left: 40%;
-  margin-top: 7%;
+  margin-top: 3%;
 }
 
 /*Body of Info*/
@@ -364,11 +364,12 @@ a{
   display: inline;
   width: 100%;
   margin-left: 60px;
+  float: left;
  
  
 }
 
-.Option{
+.OptionButton{
   background-color: #ffffff9f;
   float: left;
   width: 90px;
@@ -452,7 +453,7 @@ a{
   margin-left: 60px;
   margin-bottom: 60px;
   width: 100%;
-  margin-top: ;
+  
 }
 select{
   border: none;
