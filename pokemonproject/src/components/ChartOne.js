@@ -2,8 +2,23 @@ import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 import 'chart.js/auto';
 import React from "react";
 import { Bar } from 'react-chartjs-2';
-
+import axios from 'axios';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import {useState, useRef, useEffect} from 'react';
+//const (pokemon,setPokeon) =useState([]);
+// labels: {pokemon},
 const ChartOne = () =>{
+
+  useEffect(() => {
+
+    axios.get("")
+    .then((res)=>{
+
+
+    })
+  }, [])
+
+
     return(
         <>
       <div className="componentInteriorBar">
