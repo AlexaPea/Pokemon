@@ -6,9 +6,11 @@ import Comparisons from './components/Comparison';
 import Timeline from './components/Timeline';
 import ChartOne from './components/ChartOne';
 import ChartTwo from './components/ChartTwo';
-import ChartThree from './components/ChartThree';
+import CompareChart from './components/CompareChart';
 import ChartFour from './components/ChartFour';
 import ChartFive from './components/ChartFive';
+import DashBarChart from './components/DashBarChart';
+import ChartThree from './components/ChartThree';
 
 
 

@@ -8,55 +8,78 @@ import {useState, useRef, useEffect} from 'react';
 //const (pokemon,setPokeon) =useState([]);
 // labels: {pokemon},
  // https://pokeapi.co/api/v2/pokemon/1/
-const ChartOne = (props) =>{
+const DashBarChart = () =>{
 
-  const [pokemonName, setPokemonName]= useState("");
- 
+  const [pokemonTypes, setPokemonTypes] = useState([]);
+  const [pokemonTypeAmounts, setPokemonTypeAmounts] = useState([]);
+
+  useEffect(() => {
+
+    let types = [];
+    for (let i = 1; i <= 888; i++) {
+      
+      const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+      fetch(url)
+        .then(res => res.json())
+        .then(pokemon => {
+        
+          types[i]=pokemon.types[0].type.name;
+
+   
+        });
+    }
+
+    setPokemonTypes(types);
+
+    
+    let counts = {};
+    pokemonTypes.forEach((x) => {
+      counts[x] = (counts[x] || 0) + 1;
+    });
+
+
+    setPokemonTypeAmounts(counts);
+    
+    
+  }, [])
+  // console.log(pokemonTypeAmounts);
+  console.log(pokemonTypeAmounts);
+  console.log(pokemonTypeAmounts);
+let labels =Object.keys(pokemonTypeAmounts);
+let amounts = Object.values(pokemonTypeAmounts);
+
 
 
     return(
         <>
       <div className="componentInteriorBar">
-            <h3>Stats</h3>
+            <h3>Pokemon Types</h3>
 
             <div className="ComparsionGraph">
             <Bar 
+           
             data={{
                
-               
+                labels:labels,
                 
                 datasets: [{
-                    label: 'Base Stats',
-                    // labels: (Object.keys(props.value1)),
+                  // barPercentage: 2,
+                  // barThickness: 8,
+                 
+                    label: ' ',
                     minBarLength: 20,
-                    data: (props.value1),
+                    data: amounts,
                     backgroundColor: [
-                        'rgb(42, 157, 143)',
-                        'rgb(42, 157, 143)',
-                        'rgb(42, 157, 143)',
-                        'rgb(42, 157, 143)',
-                        'rgb(42, 157, 143)',
-                        'rgb(42, 157, 143)',
-                      
-                        
+                        '#E9C46A',
+                                              
                     ],
-                    borderColor: [
-                      'rgb(42, 157, 143)',
-                      'rgb(42, 157, 143)',
-                      'rgb(42, 157, 143)',
-                      'rgb(42, 157, 143)',
-                      'rgb(42, 157, 143)',
-                      'rgb(42, 157, 143)',
-                    ],
-                    borderWidth: 2,
-                    borderRadius: 10,
+                   
+                   
+                   
+                    borderRadius: 2,
                     hoverBorderColor: [
-                        'rgb(236, 123, 82)',
-                        'rgb(236, 123, 82)',
-                        'rgb(236, 123, 82)',
-                        'rgb(236, 123, 82)',
-                        'rgb(236, 123, 82)',
-                        'rgb(236, 123, 82)',
+                        '#E9C46A',
+                        
                     ],
                                        
                       
@@ -76,6 +99,9 @@ const ChartOne = (props) =>{
             height={400} 
             width={600} 
             options={{ maintainAspectRatio: true, 
+              // indexAxis: 'y',
+             
+
         
                 plugins: {  // 'legend' now within object 'plugins {}'
                     legend: {
@@ -93,14 +119,27 @@ const ChartOne = (props) =>{
                 scales: {
     
                     x: {
+                      ticks: {
+                        autoSkip: false,
+                        beginAtZero: true,
+                       
+                       
+                        
+                      },
                         grid: {
                             display:false
                         }
                     },
-                    y: 
+                    y:         
                         {
+                          stacked: true,
+                          ticks: {
+                            autoSkip: false,
+                          
+                           
+                          },
                           grid: {
-                            display:false
+                            display:false,
                           }
                         }
                       ,
@@ -122,4 +161,4 @@ const ChartOne = (props) =>{
 
 }
 
-export default ChartOne
+export default DashBarChart

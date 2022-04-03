@@ -1,51 +1,47 @@
 import 'chart.js/auto';
 import React from "react";
 import { Radar } from 'react-chartjs-2';
+import 'chart.js/auto';
 import axios from 'axios';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import {useState, useRef, useEffect} from 'react';
+//const (pokemon,setPokeon) =useState([]);
 
-const ChartThree = () =>{
+const CompareChart = (props) =>{
 
-  
+console.log(props.val);
+console.log(props.val2);
+
+
     return(
-
-      
         <>
         <div className="componentInteriorRadar">
-              <h3>Chart 3: Radar Chart</h3>
+              <h3>Lets Compare!</h3>
   
-              <div className="SRC Elections">
+              <div className="Stats Comparison">
+
+                
               <Radar 
               data={{
                  
-                  labels: ['Jessica', 'Ren', 'Tate', 'James', 'Olivia', 'Jarrett'],
+                // labels: Object.keys(props.pokemondataOne),
                   datasets: [{
-                      label: 'Title',
+                      label: 'Pokemon 1',
                       minBarLength: 20,
-                      data: [12, 19, 10, 15, 11, 13],
-                     
-                      borderColor: [
-                        '#264653',
-                        '#2A9D8F',
-                        '#E9C46A', 
-                        '#F4A261',
-                        '#E76F51',
-                        '#BC412B',
-                      ],
-                      borderWidth: 1,
-                      borderRadius: 20,
-                      hoverBorderColor: [
-                        '#264653',
-                        '#2A9D8F',
-                        '#E9C46A', 
-                        '#F4A261',
-                        '#E76F51',
-                        '#BC412B',
-                      ],
-                      pointStyle: 'circle',
+                      // data: (props?.val),
+                      border: 'none',
+                      backgroundColor: 'rgb(236, 123, 82, 0.3)',
+                      pointStyle: 'line',
                       
                   },
+                  {
+                    label: 'Pokemon 2',
+                    minBarLength: 20,
+                    // data: (props?.val2),
+                    backgroundColor: 'rgb(42, 157, 143, 0.3)',
+                    pointStyle: 'line',
+                    border: 'none'
+                },
                   
                   
               
@@ -59,10 +55,11 @@ const ChartThree = () =>{
                 plugins: {  // 'legend' now within object 'plugins {}'
                     legend: {
                       labels: {
-                        boxWidth: 0,
+                        boxWidth: 3,
+                        border: 0,
                        
                         font: {
-                          size: 18 // 'size' now within object 'font {}'
+                          size: 12 // 'size' now within object 'font {}'
                
                           
                         }
@@ -87,4 +84,4 @@ const ChartThree = () =>{
 
 }
 
-export default ChartThree
+export default CompareChart
