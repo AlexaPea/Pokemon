@@ -346,7 +346,7 @@ a{
   box-shadow:
   0  5px 10px rgba(154,160,185,0.05),
   0 15px 40px rgba(166,173,201,0.2);
-  background-image:linear-gradient(to bottom, rgba(235, 235, 235, 0.9) 100%,rgba(235, 235, 235, 0.9) 100%),  url(./Images/bg.jpg) ;
+  background-image:linear-gradient(to bottom, rgba(235, 235, 235, 0.7) 100%,rgba(235, 235, 235, 0.8) 100%),  url(./Images/bg.png) ;
  
   background-size: cover;
 
