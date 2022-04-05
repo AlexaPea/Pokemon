@@ -30,39 +30,9 @@ const Comparisons = () => {
     
 
 
-    useEffect(() => {
-        axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1100')
-        .then((res)=>{
-    
-          let data=res.data;
-          console.log(data);
-
-          const pokemonList = [];
-
-          for(let i=0; i<30; i++){
-              pokemonList.push({
-                  key: i,
-                  name: data.results[i].name,
-          })}
-
-          setPokemonListed(pokemonList);
-         
-                   
-          
-    
-        })
-        
-    let pokemon1Name = pokemonOne.current.value;
-    console.log(pokemon1Name);
-    let pokemon2Name = pokemonTwo.current.value;
-    console.log(pokemon2Name);
-
-
-    
- 
-    
-        console.log(pokemonListed);
-        axios.get('https://pokeapi.co/api/v2/pokemon/'+ 'bulbasaur')
+    function optionOneSelected(){
+        console.log('selected');
+        axios.get('https://pokeapi.co/api/v2/pokemon/'+ pokemonOne.current.value)
         .then((res)=>{
     
           let data=res.data;
@@ -102,43 +72,154 @@ const Comparisons = () => {
     
         })
 
-        console.log(pokemonOneData);
-        
-        axios.get('https://pokeapi.co/api/v2/pokemon/charmander')
+
+}
+function optionTwoSelected(){
+    console.log('selected2');
+    axios.get('https://pokeapi.co/api/v2/pokemon/' + pokemonTwo.current.value)
+    .then((res)=>{
+
+      let data=res.data;
+      console.log(data);
+
+      let type2 = data.types.type;
+      let id2 = data.id;
+      let height2= data.height;
+      let weight2 = data.weight;
+
+    //   console.log(type2)
+
+      setPokemonType2(type2);
+      setPokemonId2(id2);
+      setPokemonHeight2(height2);
+      setPokemonWeight2(weight2);
+
+
+      let pokemonTwoDataList= ({
+        hp: data.stats[0].base_stat,
+        Attack: data.stats[1].base_stat,
+        Defense: data.stats[2].base_stat,
+        SpecialAttack: data.stats[3].base_stat,
+        SpecialDefense: data.stats[4].base_stat,
+        Speed: data.stats[5].base_stat,
+  
+
+    })
+
+    setPokemonTwoData(pokemonTwoDataList);
+      
+      
+
+    })
+
+}
+    useEffect(() => {
+        axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1100')
         .then((res)=>{
     
           let data=res.data;
           console.log(data);
 
-          let type2 = data.types.type;
-          let id2 = data.id;
-          let height2= data.height;
-          let weight2 = data.weight;
+          const pokemonList = [];
 
-        //   console.log(type2)
+          for(let i=0; i<30; i++){
+              pokemonList.push({
+                  key: i,
+                  name: data.results[i].name,
+          })}
 
-          setPokemonType2(type2);
-          setPokemonId2(id2);
-          setPokemonHeight2(height2);
-          setPokemonWeight2(weight2);
-
-
-          let pokemonTwoDataList= ({
-            hp: data.stats[0].base_stat,
-            Attack: data.stats[1].base_stat,
-            Defense: data.stats[2].base_stat,
-            SpecialAttack: data.stats[3].base_stat,
-            SpecialDefense: data.stats[4].base_stat,
-            Speed: data.stats[5].base_stat,
-      
- 
-        })
-
-        setPokemonTwoData(pokemonTwoDataList);
-          
+          setPokemonListed(pokemonList);
+         
+                   
           
     
         })
+        
+    let pokemon1Name = pokemonOne.current.value;
+    console.log(pokemon1Name);
+    let pokemon2Name = pokemonTwo.current.value;
+    console.log(pokemon2Name);
+    console.log(pokemonListed);
+
+
+    
+        // axios.get('https://pokeapi.co/api/v2/pokemon/'+ pokemonOne)
+        // .then((res)=>{
+    
+        //   let data=res.data;
+        //   console.log(data);
+
+        //   let type = data.types[0].type.name;
+        //   let id = data.id;
+        //   let height= data.height;
+        //   let weight = data.weight;
+
+        //   //console.log(type)
+
+        //   setPokemonType(type);
+        //   setPokemonId(id);
+        //   setPokemonHeight(height);
+        //   setPokemonWeight(weight);
+
+         
+
+          
+        //       let pokemonOneDataList= ({
+        //           hp: data.stats[0].base_stat,
+        //           Attack: data.stats[1].base_stat,
+        //           Defense: data.stats[2].base_stat,
+        //           SpecialAttack: data.stats[3].base_stat,
+        //           SpecialDefense: data.stats[4].base_stat,
+        //           Speed: data.stats[5].base_stat,
+            
+
+        //       })
+
+        //       setPokemonOneData(pokemonOneDataList);
+          
+
+          
+          
+    
+        // })
+
+        console.log(pokemonOneData);
+        
+        // axios.get('https://pokeapi.co/api/v2/pokemon/'+pokemonTwo)
+        // .then((res)=>{
+    
+        //   let data=res.data;
+        //   console.log(data);
+
+        //   let type2 = data.types.type;
+        //   let id2 = data.id;
+        //   let height2= data.height;
+        //   let weight2 = data.weight;
+
+        // //   console.log(type2)
+
+        //   setPokemonType2(type2);
+        //   setPokemonId2(id2);
+        //   setPokemonHeight2(height2);
+        //   setPokemonWeight2(weight2);
+
+
+        //   let pokemonTwoDataList= ({
+        //     hp: data.stats[0].base_stat,
+        //     Attack: data.stats[1].base_stat,
+        //     Defense: data.stats[2].base_stat,
+        //     SpecialAttack: data.stats[3].base_stat,
+        //     SpecialDefense: data.stats[4].base_stat,
+        //     Speed: data.stats[5].base_stat,
+      
+ 
+        // })
+
+        // setPokemonTwoData(pokemonTwoDataList);
+          
+          
+    
+        // })
       }, [])
 
      
@@ -163,7 +244,7 @@ const Comparisons = () => {
             <div className='contentContainer'>
                 <div className='left-panel'>
                     <div className='selectOption'>
-                        <select ref={pokemonOne}>
+                        <select onChange={optionOneSelected} ref={pokemonOne}>
                             {pokemonOptions}
                         </select>
                     </div>
@@ -195,7 +276,7 @@ const Comparisons = () => {
 
                 <div className='right-panel'>
                     <div className='selectOption'>
-                        <select ref={pokemonTwo}>
+                        <select onChange={optionTwoSelected} ref={pokemonTwo}>
                             {pokemonOptions}
                         </select>
                     </div>

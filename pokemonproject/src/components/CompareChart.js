@@ -9,7 +9,7 @@ import {useState, useRef, useEffect} from 'react';
 
 const CompareChart = (props) =>{
 
-console.log(props.val);
+  console.log(props.val);
 console.log(props.val2);
 
 
@@ -20,15 +20,14 @@ console.log(props.val2);
   
               <div className="Stats Comparison">
 
-                
+                {/* <h1>{props.val}</h1> */}
               <Radar 
               data={{
-                 
-                // labels: Object.keys(props.pokemondataOne),
+                  // labels:[Object.keys(props.val)],
                   datasets: [{
                       label: 'Pokemon 1',
                       minBarLength: 20,
-                      // data: (props?.val),
+                      // data: [Object.val(props.val)],
                       border: 'none',
                       backgroundColor: 'rgb(236, 123, 82, 0.3)',
                       pointStyle: 'line',
