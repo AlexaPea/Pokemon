@@ -24,10 +24,10 @@ const ChartOne = (props) =>{
             data={{
                
                
-                
+              labels: props.labels,
                 datasets: [{
                     label: 'Base Stats',
-                    // labels: (Object.keys(props.value1)),
+                    
                     minBarLength: 20,
                     data: (props.value1),
                     backgroundColor: [

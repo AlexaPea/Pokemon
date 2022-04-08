@@ -27,6 +27,7 @@ const Comparisons = () => {
     const[pokemonListed, setPokemonListed] = useState([]);
     const[pokemonOneData, setPokemonOneData] = useState();
     const[pokemonTwoData, setPokemonTwoData] = useState();
+    const[dataLabels, setDataLabels] = useState();
     
 
 
@@ -53,18 +54,27 @@ const Comparisons = () => {
          
 
           
-              let pokemonOneDataList= ({
-                  hp: data.stats[0].base_stat,
-                  Attack: data.stats[1].base_stat,
-                  Defense: data.stats[2].base_stat,
-                  SpecialAttack: data.stats[3].base_stat,
-                  SpecialDefense: data.stats[4].base_stat,
-                  Speed: data.stats[5].base_stat,
+            //   let pokemonOneDataList= ({
+            //       hp: data.stats[0].base_stat,
+            //       Attack: data.stats[1].base_stat,
+            //       Defense: data.stats[2].base_stat,
+            //       SpecialAttack: data.stats[3].base_stat,
+            //       SpecialDefense: data.stats[4].base_stat,
+            //       Speed: data.stats[5].base_stat,
             
 
-              })
+            //   })
+
+              let pokemonOneDataList = [
+                data.stats[0].base_stat, data.stats[1].base_stat, data.stats[2].base_stat, data.stats[3].base_stat,data.stats[4].base_stat,data.stats[5].base_stat
+              ];
+
+              let labels = [
+                  'hp', 'Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed'
+              ];
 
               setPokemonOneData(pokemonOneDataList);
+              setDataLabels(labels);
           
 
           
@@ -95,16 +105,19 @@ function optionTwoSelected(){
       setPokemonWeight2(weight2);
 
 
-      let pokemonTwoDataList= ({
-        hp: data.stats[0].base_stat,
-        Attack: data.stats[1].base_stat,
-        Defense: data.stats[2].base_stat,
-        SpecialAttack: data.stats[3].base_stat,
-        SpecialDefense: data.stats[4].base_stat,
-        Speed: data.stats[5].base_stat,
+    //   let pokemonTwoDataList= ({
+    //     hp: data.stats[0].base_stat,
+    //     Attack: data.stats[1].base_stat,
+    //     Defense: data.stats[2].base_stat,
+    //     SpecialAttack: data.stats[3].base_stat,
+    //     SpecialDefense: data.stats[4].base_stat,
+    //     Speed: data.stats[5].base_stat,
   
 
-    })
+    // })
+    let pokemonTwoDataList = [
+        data.stats[0].base_stat, data.stats[1].base_stat, data.stats[2].base_stat, data.stats[3].base_stat,data.stats[4].base_stat,data.stats[5].base_stat
+      ];
 
     setPokemonTwoData(pokemonTwoDataList);
       
@@ -250,7 +263,7 @@ function optionTwoSelected(){
                     </div>
                     <div className='abilityGraph'>
                         <div className="BarGraph_Comp">
-                            <ChartOne value1={pokemonOneData}/>
+                            <ChartOne value1={pokemonOneData} labels={dataLabels}/>
                         </div>
                     </div>
                     <div className='pokemonInfo'>
@@ -266,7 +279,7 @@ function optionTwoSelected(){
 
                 <div className='center-panel'>
                     <div className="RadarGraph_Comp">
-                         <CompareChart val={pokemonOneData} val2={pokemonTwoData}/>
+                         <CompareChart val={pokemonOneData} val2={pokemonTwoData} labels={dataLabels}/>
                     </div>
                     <div className="RadarGraph_Comp">
                          <ChartTwo/>
@@ -282,7 +295,7 @@ function optionTwoSelected(){
                     </div>
                     <div className='abilityGraph'>
                         <div className="BarGraph_Comp">
-                            <CompBarChart2 value={pokemonTwoData}/>
+                            <CompBarChart2 value={pokemonTwoData} labels={dataLabels}/>
                         </div>
                     </div>
                     <div className='pokemonInfo'>

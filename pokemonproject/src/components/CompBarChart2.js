@@ -38,10 +38,10 @@ const CompBarChart2 = (props) =>{
             data={{
                
               
-                
+                labels: props.labels,
               datasets: [{
                   label: 'Base Stats',
-                  // labels: ['HP', 'Attack', 'Defense', 'Speed', 'Special Attack', 'Special Defense'],
+                  labels: props.labels,
                   minBarLength: 20,
                   data: props.value,
                   backgroundColor: [

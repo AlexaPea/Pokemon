@@ -16,7 +16,7 @@ const DashBarChart = () =>{
   useEffect(() => {
 
     let types = [];
-    for (let i = 1; i <= 887; i++) {
+    for (let i = 1; i <= 888; i++) {
       
       const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
       fetch(url)

@@ -1,16 +1,60 @@
 import 'chart.js/auto';
 import React from "react";
-import { Radar } from 'react-chartjs-2';
-import 'chart.js/auto';
+import { Bar, Radar } from 'react-chartjs-2';
 import axios from 'axios';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+
 import {useState, useRef, useEffect} from 'react';
 //const (pokemon,setPokeon) =useState([]);
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+ChartJS.register(
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend
+);
 
 const CompareChart = (props) =>{
 
   console.log(props.val);
 console.log(props.val2);
+
+
+const data = {
+  labels:props.labels,
+  datasets: [{
+      label: 'Pokemon 1',
+      minBarLength: 20,
+      data: props.val,
+      border: 'none',
+      backgroundColor: 'rgb(42, 157, 143, 0.3)',
+      pointStyle: 'line',
+      
+  },
+  {
+    label: 'Pokemon 2',
+    minBarLength: 20,
+    data: (props?.val2),
+    backgroundColor: 'rgb(236, 123, 82, 0.3)',
+    pointStyle: 'line',
+    border: 'none'
+},
+  
+  
+
+],
+
+}
 
 
     return(
@@ -20,33 +64,9 @@ console.log(props.val2);
   
               <div className="Stats Comparison">
 
-                {/* <h1>{props.val}</h1> */}
-              <Radar 
-              data={{
-                  // labels:[Object.keys(props.val)],
-                  datasets: [{
-                      label: 'Pokemon 1',
-                      minBarLength: 20,
-                      // data: [Object.val(props.val)],
-                      border: 'none',
-                      backgroundColor: 'rgb(236, 123, 82, 0.3)',
-                      pointStyle: 'line',
-                      
-                  },
-                  {
-                    label: 'Pokemon 2',
-                    minBarLength: 20,
-                    // data: (props?.val2),
-                    backgroundColor: 'rgb(42, 157, 143, 0.3)',
-                    pointStyle: 'line',
-                    border: 'none'
-                },
-                  
-                  
+                
+              <Radar data={data}
               
-              ],
-              
-              }} 
               
               height={400} 
               width={600} 
