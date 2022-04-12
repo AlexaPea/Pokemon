@@ -12,41 +12,54 @@ const DashBarChart = () =>{
 
   const [pokemonTypes, setPokemonTypes] = useState([]);
   const [pokemonTypeAmounts, setPokemonTypeAmounts] = useState([]);
+  const [pokeTypeNames, setPokeTypeNames] =useState([]);
 
   useEffect(() => {
 
-    let types = [];
-    for (let i = 1; i <= 888; i++) {
-      
-      const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-      fetch(url)
-        .then(res => res.json())
-        .then(pokemon => {
-        
-          types[i]=pokemon.types[0].type.name;
+   //get type names
+    axios.get('https://pokeapi.co/api/v2/type/') //This is to get the Number of tpes
+    .then((res)=>{
+
+      let data=res.data;
+      let typeNames = [];
+
+      for(let i=0; i<((data.count)-2);i++){
+        typeNames.push(data.results[i].name);
+      }
+
+      setPokeTypeNames(typeNames);
+
+    })
+
+       //get type amounts
+
+    let typeAmounts = [];
+      for(let i=0; i<(19);i++){
+        axios.get('https://pokeapi.co/api/v2/type/'+i+"/") //This is to get the Number of tpes
+        .then((res)=>{
+          let data=res.data;
+          typeAmounts.push(data.pokemon.length);
+
+          
+        })
+      }
+
+      setPokemonTypeAmounts(typeAmounts);
+
 
    
-        });
-    }
-
-    setPokemonTypes(types);
 
     
-    let counts = {};
-    pokemonTypes.forEach((x) => {
-      counts[x] = (counts[x] || 0) + 1;
-    });
-
-
-    setPokemonTypeAmounts(counts);
+  
     
     
   }, [])
+
+
   // console.log(pokemonTypeAmounts);
-  console.log(pokemonTypeAmounts);
-  console.log(pokemonTypeAmounts);
-let labels =Object.keys(pokemonTypeAmounts);
-let amounts = Object.values(pokemonTypeAmounts);
+
+let labels =pokeTypeNames;
+
 
 
 
@@ -59,8 +72,9 @@ let amounts = Object.values(pokemonTypeAmounts);
             <Bar 
            
             data={{
+              
                
-                labels:labels,
+                labels:pokeTypeNames,
                 
                 datasets: [{
                   // barPercentage: 2,
@@ -68,7 +82,7 @@ let amounts = Object.values(pokemonTypeAmounts);
                  
                     label: ' ',
                     minBarLength: 20,
-                    data: amounts,
+                    data: pokemonTypeAmounts,
                     backgroundColor: [
                         '#E9C46A',
                                               
@@ -101,21 +115,20 @@ let amounts = Object.values(pokemonTypeAmounts);
             options={{ maintainAspectRatio: true, 
               // indexAxis: 'y',
              
-
-        
-                plugins: {  // 'legend' now within object 'plugins {}'
-                    legend: {
-                      labels: {
-                        boxWidth: 0,
-                       
-                        font: {
-                          size: 18 // 'size' now within object 'font {}'
-               
-                          
-                        }
-                      }
-                    }
-                  },
+    
+                plugins: {
+                  legend: false,
+                  outlabels: {
+                    //  text: '%l %p',
+                     color: '#2b2b2b',
+                     stretch: 45,
+                     font: {
+                         resizable: true,
+                         minSize: 12,
+                         maxSize: 18
+                     }
+                  }
+               },
                 scales: {
     
                     x: {

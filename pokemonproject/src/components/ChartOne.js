@@ -26,7 +26,7 @@ const ChartOne = (props) =>{
                
               labels: props.labels,
                 datasets: [{
-                    label: 'Base Stats',
+                    label: '  ',
                     
                     minBarLength: 20,
                     data: (props.value1),
@@ -48,8 +48,8 @@ const ChartOne = (props) =>{
                       'rgb(42, 157, 143)',
                       'rgb(42, 157, 143)',
                     ],
-                    borderWidth: 2,
-                    borderRadius: 10,
+                    borderWidth: 0,
+                    borderRadius: 5,
                     hoverBorderColor: [
                         'rgb(236, 123, 82)',
                         'rgb(236, 123, 82)',
@@ -76,6 +76,7 @@ const ChartOne = (props) =>{
             height={400} 
             width={600} 
             options={{ maintainAspectRatio: true, 
+              indexAxis: 'y',
         
                 plugins: {  // 'legend' now within object 'plugins {}'
                     legend: {

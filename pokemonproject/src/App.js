@@ -11,6 +11,7 @@ import ChartFour from './components/ChartFour';
 import ChartFive from './components/ChartFive';
 import DashBarChart from './components/DashBarChart';
 import ChartThree from './components/ChartThree';
+import DoughnutOne from './components/DoughnutOne';
 
 
 

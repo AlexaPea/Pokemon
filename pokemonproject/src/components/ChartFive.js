@@ -3,14 +3,24 @@ import 'chart.js/auto';
 import React from "react";
 import { Line } from 'react-chartjs-2';
 
-const ChartFive = () =>{
+
+
+const ChartFive = (props) =>{
+
+  
+
+  console.log(props.exValue);
+  console.log(props.levelValue);
+
+
+
     return(
         <>
         <div className="componentInteriorLine">
-              <h3>Chart 5: Line Graph</h3>
+              {/* <h3>Growth Rates</h3> */}
               
   
-              <div className="SRC Elections">
+            
               <Line 
 
                 
@@ -18,11 +28,11 @@ const ChartFive = () =>{
               data={{
                 
                  colour:'white',
-                  labels: ['Jessica', 'Ren', 'Tate', 'James', 'Olivia', 'Jarrett'],
+                  labels: (props.val2),
                   datasets: [{
-                    label: 'SRC Election Candidates',
+                    label: 'Growth Rate',
                     fontColor: 'white',
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    data: (props.val1),
                     fill: false,
                     borderColor: 'white',
                     tension: 0.1
@@ -123,7 +133,6 @@ const ChartFive = () =>{
   
   
   
-          </div>
           </>
     );
 

@@ -6,6 +6,7 @@ import ChartThree from './ChartThree';
 import axios from 'axios';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import {useState, useRef, useEffect} from 'react';
+import ChartFour from './ChartFour';
 
 
 
@@ -88,8 +89,8 @@ const Dashboard = () => {
                     </div>
 
                     <div className="Row-Block three">
-                        <h3>Evolve</h3>
-                        <p>Evolving your pokemon increases their abilities and allows them to get stronger!</p>
+                        <h3>Hatch!</h3>
+                        <p>Find Pokemon eggs and wait patienty for them to hatch. You never know what you might get!</p>
                     </div>
 
                 </div>
@@ -97,12 +98,12 @@ const Dashboard = () => {
                 <div className="ContentContainer">
 
                 <div className="pokemonNum">
-                    <h3>Number of Pokemon</h3>
                     <p>{pokemonAmount}</p>
+                    <h3>Number of Pokemon</h3>
                 </div>
                 <div className="pokemonNum">
-                    <h3>Game Versions</h3>
                     <p>{versionAmount}</p>
+                    <h3>Game Versions</h3>
                 </div>
                
                 </div>
@@ -114,14 +115,8 @@ const Dashboard = () => {
                 </div>
                 <div className="DoughnutGraph_Dash">
                 <div className='pokemonExplained'>
-                        <h3>About</h3>
-                        <br/>
-                        <p>Pokémon is a series of video games developed by Game Freak and published by Nintendo and The Pokémon Company under the Pokémon media franchise.</p>
-                       <br/>
-                        <p>The game that has molded childhoods,ignited our creativity and brought magic to life is back once more! With new pokemon, trainers and challenges to experience!</p>
-                  <br/>
-                  <p>Let the adventure begin ...</p>
-                  
+                  <ChartFour/>
+                  <p>All Pokemon prefer different habitats. Above displays the habitats containing the most pokemon.</p>
                     </div>
                 </div>
                 <div className="RadarGraph_Dash">

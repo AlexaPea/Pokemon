@@ -142,6 +142,7 @@ a{
 .HeaderText p{
   width: 50%;
   font-size: 16px;
+  font-weight: lighter
 }
 
 .charazardImg img{
@@ -171,24 +172,24 @@ a{
   margin: 30px 10px 0px 0px;
   text-align: center;
   /* border: 1px solid #05A8AA; */
-  border: 1px solid #2b2b2b;
+  border: 1px solid #F4A261;
   font-size: 14px;
   font-weight: bold;
   box-shadow:
   0  5px 10px rgba(154,160,185,0.05),
-  0 15px 40px rgba(166,173,201,0.2);
+  0 15px 30px rgba(166,173,201,0.1);
   
 }
 .Button1{
   /* background-color: #05A8AA; */
-  background-color: #2b2b2b;
+  background-color: #F4A261;
   color: #ffffff;
   
 }
 .Button2{
   background-color: #ffffff;
   /* color: #05A8AA; */
-  color: #2b2b2b;
+  color: #F4A261;
   
   
 }
@@ -317,6 +318,7 @@ a{
 .BarGraph_Comp{
   width: 100%;
   margin-left: 10px;
+  margin-top: 20px;
   
 }
 
@@ -346,7 +348,7 @@ a{
   box-shadow:
   0  5px 10px rgba(154,160,185,0.05),
   0 15px 40px rgba(166,173,201,0.2);
-  background-image:linear-gradient(to bottom, rgba(235, 235, 235, 0.7) 100%,rgba(235, 235, 235, 0.8) 100%),  url(./Images/bg.png) ;
+  /* background-image:linear-gradient(to bottom, rgba(235, 235, 235, 0.7) 100%,rgba(235, 235, 235, 0.8) 100%),  url(./Images/bg.png) ; */
  
   background-size: cover;
 
@@ -471,7 +473,7 @@ a{
                         '#BC412B', */
 /*Comparisons Page*/
 .BodyBox.Comparisons{
-  height: 150vh;
+  height: 180vh;
 
 }
 .left-panel{
@@ -501,7 +503,7 @@ a{
   border-radius: 10px;
   box-shadow:
   0  5px 10px rgba(154,160,185,0.05),
-  0 15px 40px rgba(166,173,201,0.2);
+  0 15px 20px rgba(166,173,201,0.1);
   margin-left: 10px;
   margin-bottom: 60px;
   width: 100%;
@@ -520,10 +522,158 @@ select{
   0  5px 10px rgba(154,160,185,0.05),
   0 15px 40px rgba(166,173,201,0.2);
   margin-left: 10px;
-  margin-top: 340px;
+  margin-top: -40px;
   width: 100%;
 
 }
 .pokemonInfo p{
   padding: 10px;
 }
+
+/*Compare Page Styling*/
+.pokeName{
+  text-align: center;
+  text-transform: capitalize;
+  /* font-weight: lighter; */
+  
+}
+hr{
+  margin: 0 auto;
+  margin-top: 8px;
+  width: 130px;
+  border: 1px solid #6ee090;
+  background-color: #6ee090;
+ 
+}
+small{
+  display: block;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 11px;
+}
+
+.rowOne{
+  color: #2A9D8F;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: medium;
+}
+
+.rowOne td{
+  border-right: solid 1px #2b2b2b; 
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  /* height: 10px; */
+}
+
+.rowOne .last{
+  border-right: solid 0px #2b2b2b; 
+}
+td{
+  width: 230px;
+  text-align: center;
+}
+ .smalltxt{
+  font-size: small;
+  display: inline;
+  padding: 0;
+  margin-left: 0px;
+ 
+ }
+ table{
+   margin-top: 15px;
+ }
+
+ .title{
+   color: #2b2b2b;
+   font-size: 11px;
+   text-align: center;
+   margin-top: -15px;
+   padding: 0px;
+ }
+
+ .idStyle{
+   text-align: center;
+   font-weight: 500;
+ }
+
+ .componentInteriorRadar h3{
+   text-align: center;
+ }
+
+ .radar{
+   margin-top: -30px;
+ }
+
+
+ /*Dashboard*/
+
+ .pokemonNum h3{
+   font-size: 16px;
+   text-align:center;
+   margin-top: 10px;
+   font-weight: lighter;
+ }
+ .pokemonNum p{
+  font-size: 22px;
+  font-weight: 300;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  padding: 10px;
+  background: #fff;
+  border: 2px solid #2b2b2b;
+  color: #2b2b2b;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.componentInteriorBar h3, .componentInteriorPolar h3{
+  text-align: center;
+  font-weight: lighter;
+  margin-bottom: -15px;
+  margin-top: 10px;
+}
+
+.Row-Block h3{
+  font-weight: 450;
+  padding-bottom:10px;
+}
+.Row-Block p{
+  font-weight: lighter
+}
+
+.PolarChart{
+  width: 300px;
+  margin: 0 auto;
+  margin-top: -70px;
+}
+
+.pokemonExplained p{
+  margin-top:-50px;
+  font-weight: lighter;
+  text-align: center
+}
+
+.RadarGraph_Comp.winnerBlock h5{
+font-weight: lighter;
+text-align: center;
+}
+
+.RadarGraph_Comp.winnerBlock h3{
+  font-size:30px;
+  text-align: center;
+  text-transform: capitalize;
+  }
+
+  .Doughnut{
+    width: 350px;
+  }
+
+  .BarGraph_Comp.Doughnut{
+
+    width: 380px;
+
+  }
+

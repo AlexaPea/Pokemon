@@ -26,46 +26,53 @@ ChartJS.register(
 
 const CompareChart = (props) =>{
 
-  console.log(props.val);
-console.log(props.val2);
+//   console.log(props.val);
+// console.log(props.val2);
 
 
 const data = {
   labels:props.labels,
-  datasets: [{
-      label: 'Pokemon 1',
-      minBarLength: 20,
-      data: props.val,
-      border: 'none',
-      backgroundColor: 'rgb(42, 157, 143, 0.3)',
-      pointStyle: 'line',
-      
-  },
-  {
-    label: 'Pokemon 2',
+  datasets: [ {
+    label: ' ',
     minBarLength: 20,
     data: (props?.val2),
-    backgroundColor: 'rgb(236, 123, 82, 0.3)',
+    borderColor:'rgb(236, 123, 82)',
+    backgroundColor: 'rgb(236, 123, 82,0.2)',
     pointStyle: 'line',
-    border: 'none'
-},
+    borderWidth: 1,
+    // fillOpacity: 0.2, strokeWidth: 1,lineTension: 0.2
+},{
+      label: '  ',
+      minBarLength: 20,
+      data: props.val,
+      borderColor:'rgb(42, 157, 143)',
+      borderWidth: 1,
+      backgroundColor: 'rgb(42, 157, 143,0.2)',
+      pointStyle: 'line',
+      // fillOpacity: 0.2, strokeWidth: 1, lineTension: 0.2
+      
+  },
+ 
   
   
 
 ],
 
+
 }
+
+
 
 
     return(
         <>
         <div className="componentInteriorRadar">
-              <h3>Lets Compare!</h3>
+              <h3>Lets Battle!</h3>
   
               <div className="Stats Comparison">
 
                 
-              <Radar data={data}
+              <Radar className="radar" data={data}
               
               
               height={400} 
@@ -74,8 +81,9 @@ const data = {
                 plugins: {  // 'legend' now within object 'plugins {}'
                     legend: {
                       labels: {
-                        boxWidth: 3,
+                        boxWidth: 0,
                         border: 0,
+                       display: false,
                        
                         font: {
                           size: 12 // 'size' now within object 'font {}'

@@ -40,7 +40,7 @@ const CompBarChart2 = (props) =>{
               
                 labels: props.labels,
               datasets: [{
-                  label: 'Base Stats',
+                  label: '  ',
                   labels: props.labels,
                   minBarLength: 20,
                   data: props.value,
@@ -61,8 +61,8 @@ const CompBarChart2 = (props) =>{
                       'rgb(236, 123, 82)',
                       'rgb(236, 123, 82)',
                   ],
-                  borderWidth: 2,
-                  borderRadius: 10,
+                  borderWidth: 0,
+                  borderRadius: 5,
                   hoverBorderColor: [
                       'rgb(236, 123, 82)',
                       'rgb(236, 123, 82)',
@@ -89,6 +89,7 @@ const CompBarChart2 = (props) =>{
           height={400} 
           width={600} 
           options={{ maintainAspectRatio: true, 
+            indexAxis: 'y',
       
               plugins: {  // 'legend' now within object 'plugins {}'
                   legend: {

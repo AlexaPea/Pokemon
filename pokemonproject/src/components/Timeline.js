@@ -1,38 +1,110 @@
 import anxios from "axios";
 import ChartFive from './ChartFive.js';
 import Piplup from '../Images/piplup.jpg';
+import {useState, useRef, useEffect} from 'react';
+import axios from 'axios';
 
 
+    // let experience = [];
+    // let level = [];
+    // let updateExperience= [];
+    // let   updateLevel= [];
 
-anxios.get('https://pokeapi.co/api/v2')
-.then((response) => { 
-    console.log(response);
-})
-.catch((err) =>{
-    console.log(err);
-});
+    // function changeTimeLine(value){
+
+    //     console.log("run");
+       
+      
+    //     axios.get('https://pokeapi.co/api/v2/growth-rate/'+value+'/') //growth rate
+    //     .then((res)=>{
+    
+          
+    //       let data=res.data;
+
+    //       for(let i=0; i<data.levels.length;i++){
+
+    //         experience.push(data.levels[i].experience);
+    //         level.push(data.levels[i].level);
+
+
+    //       };
+         
+          
+    
+    //     })
+
+       
+        
+        
+    // }
+
+    // // useEffect(() => {},[])
+
 
 const Timeline = () => {
+
+    let experience = [];
+    let level = [];
+    let updateExperience= [];
+    let   updateLevel= [];
+
+    function changeTimeLine(value){
+
+        console.log("run");
+       
+      
+        axios.get('https://pokeapi.co/api/v2/growth-rate/'+value+'/') //growth rate
+        .then((res)=>{
+    
+          
+          let data=res.data;
+
+          for(let i=0; i<data.levels.length;i++){
+
+            experience.push(data.levels[i].experience);
+            level.push(data.levels[i].level);
+
+
+          };
+         
+    
+        })
+         getValues(level,experience);
+        
+    }
+
+    function getValues(levels,experience){
+        
+    }
+
+    // useEffect(() => {},[])
+
+    updateExperience= experience;
+    updateLevel= level;
+
+
+    console.log(updateExperience);
+    console.log(updateLevel);
 
     return(
         <>
            <div className="BodyBox time">
             <div className="TextContainers">
                 <h1>Totodile Timeline</h1>
-                <p>Here is a summary of the informations our website provides!We aim to give our fellow Pokemon trainers all the information they need to become a Pokemon master!</p>  
+                <p>Here we provide the timeline for the different growth rates of Pokemon!</p>  
             </div>
 
             <div class="ContentContainer">
                 <div className="OptionsRow">
-                    <div className="OptionButton one">Option</div>
-                    <div className="OptionButton two">Option</div>
-                    <div className="OptionButton three">Option</div>
-                    <div className="OptionButton four">Option</div>
-                    <div className="OptionButton five">Option</div>
+                    <button className="OptionButton one" value="1" onClick={e => changeTimeLine(e.target.value)}>Slow</button>
+                    <button className="OptionButton two" value="2" onClick={e => changeTimeLine(e.target.value)}>Medium</button>
+                    <button className="OptionButton three" value="3" onClick={e => changeTimeLine(e.target.value)}>Fast</button>
+                    <button className="OptionButton four" value="4" onClick={e => changeTimeLine(e.target.value)}>Medium-Slow</button>
+                    <button className="OptionButton five" value="5" onClick={e => changeTimeLine(e.target.value)}>Slow-Very Fast</button>
                 </div>
 
                 <div class="timeline_graph">
-                    <ChartFive/>
+                    <ChartFive val1={updateExperience} val2={updateLevel} />
                 </div>
 
                 <div className="UpdateInfo">
