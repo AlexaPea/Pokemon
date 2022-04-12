@@ -101,8 +101,7 @@ const ChartFive = (props) =>{
                         color: 'white',
                         beginAtZero: true,
                         stepSize: 10,
-                        // suggestedMax: 10,
-                        // autoSkip:false
+                     
                        
                       },
                           grid: {

@@ -710,3 +710,83 @@ text-align: center;
     background-color: #2b2b2b;
 
   }
+
+  button:active:focus:hover{
+    background-color:#2A9D8F;
+    color: white;
+  }
+
+  .OptionButton.activeOp{
+    background-color:#2A9D8F;
+    color: white;
+}
+
+.UpdateInfo p{
+  font-weight:lighter;
+  
+}
+
+.UpdateInfo h2{
+  font-weight: 450;
+  padding-bottom:10px;
+  
+}
+
+.pokemonNum2 h3{
+  font-size: 16px;
+  text-align:center;
+  margin-top: 5px;
+  font-weight: lighter;
+}
+.pokemonNum2 p{
+ font-size: 22px;
+ font-weight: 300;
+ border-radius: 50%;
+ width: 34px;
+ height: 34px;
+ padding: 10px;
+ background: #fff;
+ border: 3px solid #F4A261;
+ color: #2b2b2b;
+ text-align: center;
+ margin: 0 auto;
+ margin-top: 20px;
+ 
+}
+
+.UpdateInfo h3{
+  font-weight: 350;
+  padding-bottom:10px;
+  
+ 
+  
+}
+.UpdateInfo hr{
+  margin-left: 0px;
+  margin-top: -8px;
+  width: 135px;
+  height:0.5px;
+  border: 0px solid #2b2b2b;
+  background-color: #2b2b2b;
+
+}
+
+.learnMore h3{
+  font-weight: 450;
+  padding-bottom:10px;
+}
+.learnMore p{
+  font-weight: lighter
+}
+
+.learnMore .Button1{
+  margin-top: 17px;
+}
+
+
+.active {
+  color:#F4A261;
+  width:500px
+  
+
+}

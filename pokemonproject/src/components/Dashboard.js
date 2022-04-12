@@ -7,6 +7,8 @@ import axios from 'axios';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import {useState, useRef, useEffect} from 'react';
 import ChartFour from './ChartFour';
+import Comparisons from './Comparison';
+import {Link} from "react-router-dom";
 
 
 
@@ -62,8 +64,8 @@ const Dashboard = () => {
                 <p>Join us and lets discover more about our favourite Pokemon and the world they live in! Compare and analyze all the different pokemon and their strengths or take a look at the Poke-Timeline!</p>
 
                 <div className="buttons">
-                    <div className="Button1">Comparisons</div>
-                    <div className="Button2">Timeline</div>
+                    <a href="/Comparisons"> <div className="Button1">Comparisons</div></a>
+                    <a href="/Timeline"><div className="Button2">Timeline</div></a>
                 </div>
            </div>
            <img className="scroll" src ={scroll}/>
@@ -123,7 +125,7 @@ const Dashboard = () => {
                     <div className='learnMore'>
                         <h3>Learn More</h3>
                         <p>Interested in learning more about Pokemon? Go to the comparisons page now!</p>
-                        <div className='Button1'>Compare</div>
+                        <a href="/Comparisons"><div className='Button1'>Compare</div></a>
                     </div>
                 </div>
                
