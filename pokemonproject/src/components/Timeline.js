@@ -21,6 +21,11 @@ const Timeline = () => {
     const [activeButton, setActiveButton] = useState();
     const [ratePokeNum, setRatePokeNum] = useState();
     const [rateName, setRateName] = useState();
+    useEffect(() => {
+        //creates placeholder information
+        changeTimeLine('1');
+    }, [])
+    
    
     let value=1;
     function changeTimeLine(value){

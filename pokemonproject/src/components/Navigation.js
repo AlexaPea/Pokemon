@@ -6,13 +6,6 @@ import icon2 from '../Icons/chart.png';
 import icon3 from '../Icons/timeline.png';
 import{NavLink} from 'react-router-dom';
 
-anxios.get('https://pokeapi.co/api/v2')
-.then((response) => { 
-    console.log(response);
-})
-.catch((err) =>{
-    console.log(err);
-});
 
 const Navigation = () => {
 

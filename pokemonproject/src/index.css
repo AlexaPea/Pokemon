@@ -226,6 +226,7 @@ a{
 /*Headings*/
 
 .BodyBox h1{
+  margin-top: -20px;
   padding-bottom: 10px;
   font-size: 38px;
 }
@@ -295,7 +296,7 @@ a{
 /*Charts*/
 
 .BodyBox.two{
-  height:120vh;
+  height:110vh;
 }
 
 .BarGraph_Dash, .BarGraph_Comp{
@@ -408,7 +409,7 @@ a{
 
 /*timeline page*/
 .BodyBox.time{
-  height: 115vh;
+  height: 105vh;
   
 
 }
@@ -475,7 +476,7 @@ a{
                         '#BC412B', */
 /*Comparisons Page*/
 .BodyBox.Comparisons{
-  height: 180vh;
+  height: 160vh;
 
 }
 .left-panel{
@@ -515,6 +516,7 @@ select{
   border: none;
   width: 90%;
   text-align: center;
+  outline: none;
 }
 
 .pokemonInfo{
@@ -683,9 +685,7 @@ text-align: center;
 
   }
 
-  .RadarGraph_Comp.winnerBlock{
-    /* background-color: #E9C46A; */
-  }
+ 
 
   .Doughnut h3{
     text-align: center;
@@ -786,7 +786,10 @@ text-align: center;
 
 .active {
   color:#F4A261;
-  width:500px
-  
+
 
 }
+
+::-webkit-scrollbar{width:0px;border-left:0px solid #E6ECF8;}
+::-webkit-scrollbar-thumb{background-color:#E6ECF8;}
+
