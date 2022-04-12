@@ -3,11 +3,13 @@ import 'chart.js/auto';
 import React from "react";
 import {useState, useRef, useEffect} from 'react';
 import axios from 'axios';
+import Comparisons from './Comparison.js'
 
 
 const ChartTwo = (props) =>{
 
-    const [captureRate, setCaptureRate] = useState();
+    const [captureRate, setCaptureRate] = useState([]);
+    const [percentageRate, setPercentageRate] = useState();
     // const [lossRate, setLossRate] = useState();
 
     console.log("run");
@@ -24,12 +26,17 @@ const ChartTwo = (props) =>{
 
           capture[0] = data.capture_rate;
           capture[1] = 255 - (data.capture_rate);
+
+          let percentage = Math.round(((data.capture_rate)/255)*100);
+
+         
         //   console.log(data.capture_rate);
         //  console.log("run");
         //   notCapture = 255-(capture);
 
           setCaptureRate(capture);
-         
+          setPercentageRate(percentage);
+          <Comparisons numVal={this.percentageRate}/>;
       
     
         })
@@ -38,9 +45,10 @@ const ChartTwo = (props) =>{
         
         
       
-      }, [])
+      }, []);
 
-
+      console.log(percentageRate);
+     
 
 
     return(
@@ -57,7 +65,7 @@ const ChartTwo = (props) =>{
                       label: 'Capture Rate',
                       data: captureRate,
                       backgroundColor: [
-                        'rgb(42, 157, 143)',
+                        'rgb(236, 123, 82)',
                         '#f1f1f1',
                        
                       ],
@@ -79,8 +87,6 @@ const ChartTwo = (props) =>{
               height={400} 
               width={600} 
               options={{maintainAspectRatio: true,
-                responsive: true,
-             
                 width:200,
                 cutout: 60,
             

@@ -424,8 +424,10 @@ a{
 .OptionButton{
   background-color: #ffffff9f;
   float: left;
-  width: 90px;
+  width: 120px;
+  outline: 0px;
   padding: 15px;
+  border: 0px;
   border-radius: 10px;
   margin-right: 10px;
   margin-top: -20px;
@@ -668,12 +670,43 @@ text-align: center;
   }
 
   .Doughnut{
-    width: 350px;
+    width: 50%;
+    padding: 20px;
+    float: left;
   }
 
   .BarGraph_Comp.Doughnut{
-
-    width: 380px;
+    
+   
+    width: 360px;
+    height: 40vh;
 
   }
 
+  .RadarGraph_Comp.winnerBlock{
+    /* background-color: #E9C46A; */
+  }
+
+  .Doughnut h3{
+    text-align: center;
+    font-weight: lighter
+  }
+
+  .Doughnut h5{
+    float: left;
+    text-align: center;
+    font-weight: lighter;
+    font-size:50px;
+    padding:10px;
+    
+  }
+
+  .underNum{
+    float:left;
+    margin: 0 auto;
+    margin-top: -8px;
+    width: 100px;
+    border: 1px solid #2b2b2b;
+    background-color: #2b2b2b;
+
+  }

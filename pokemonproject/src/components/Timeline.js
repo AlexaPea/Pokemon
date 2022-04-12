@@ -45,12 +45,15 @@ const Timeline = () => {
 
     let experience = [];
     let level = [];
-    let updateExperience= [];
-    let   updateLevel= [];
+
+
+    const [updateExperience, setUpdateExperience] = useState([]);
+    const [updateLevel, setUpdateLevel] = useState([]);
+   
 
     function changeTimeLine(value){
 
-        console.log("run");
+        
        
       
         axios.get('https://pokeapi.co/api/v2/growth-rate/'+value+'/') //growth rate
@@ -66,22 +69,18 @@ const Timeline = () => {
 
 
           };
+
+          setUpdateExperience(experience);
+          setUpdateLevel(level);
+
          
     
         })
-         getValues(level,experience);
+         
         
     }
 
-    function getValues(levels,experience){
-        
-    }
-
-    // useEffect(() => {},[])
-
-    updateExperience= experience;
-    updateLevel= level;
-
+    
 
     console.log(updateExperience);
     console.log(updateLevel);

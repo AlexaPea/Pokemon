@@ -6,11 +6,14 @@ import ChartFour from './ChartFour.js';
 import {useState, useRef, useEffect} from 'react';
 import axios from 'axios';
 import DoughnutOne from './DoughnutOne';
-const Comparisons = () => {
+import DoughnutTwo from './DoughnutTwo';
 
-    const pokemonOne = useRef(null);
+
+const Comparisons = (props) => {
+
+    const pokemonOne = useRef('charmander');
     const pokeNameVal = pokemonOne;
-    const pokemonTwo = useRef(null);
+    const pokemonTwo = useRef('ditto');
 
 
     
@@ -19,7 +22,7 @@ const Comparisons = () => {
     const[pokemonId, setPokemonId]= useState();
     const[pokemonHeight, setPokemonHeight]= useState();
     const[pokemonWeight, setPokemonWeight]= useState();
-    const[pokemonName, setPokemonName]= useState();
+    const[pokemonName, setPokemonName]= useState('charmander');
     const[pokemonHp, setPokemonHp]= useState();
 
     
@@ -27,7 +30,7 @@ const Comparisons = () => {
     const[pokemonId2, setPokemonId2]= useState();
     const[pokemonHeight2, setPokemonHeight2]= useState();
     const[pokemonWeight2, setPokemonWeight2]= useState();
-    const[pokemonName2, setPokemonName2]= useState();
+    const[pokemonName2, setPokemonName2]= useState('ditto');
     const[pokemonHp2, setPokemonHp2]= useState();
 
     const[pokemonListed, setPokemonListed] = useState([]);
@@ -38,7 +41,7 @@ const Comparisons = () => {
     const[pokeTwoTotal, setPokeTwoTotal] = useState();
     const[pokemonWinner, setPokemonWinner] = useState();
     
-
+   
 
     function optionOneSelected(){
         console.log('selected');
@@ -64,19 +67,6 @@ const Comparisons = () => {
           setPokemonName(name);
           setPokemonHp(hp);
 
-         
-
-          
-            //   let pokemonOneDataList= ({
-            //       hp: data.stats[0].base_stat,
-            //       Attack: data.stats[1].base_stat,
-            //       Defense: data.stats[2].base_stat,
-            //       SpecialAttack: data.stats[3].base_stat,
-            //       SpecialDefense: data.stats[4].base_stat,
-            //       Speed: data.stats[5].base_stat,
-            
-
-            //   })
             let sum=0;
             sum= data.stats[0].base_stat+ data.stats[1].base_stat+ data.stats[2].base_stat+ data.stats[3].base_stat+data.stats[4].base_stat+data.stats[5].base_stat;
             setPokeOneTotal(sum);
@@ -174,6 +164,12 @@ function selectedWinner(){
 
 }
     useEffect(() => {
+
+        //Runs function immidiatly to put placeholder data
+        optionOneSelected();
+        optionTwoSelected();
+
+        //gets all pokemon data
         axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1100')
         .then((res)=>{
     
@@ -211,11 +207,12 @@ function selectedWinner(){
       }, [])
 
      
-     
+     console.log((props.numVal));
   
-   let pokemonOptions = pokemonListed.map((item) =>  (<option key={item.key} value={item.name}>{item.name}</option>));
+   let pokemonOptions = pokemonListed.map((item) =>  (<option key={item.key}  value={item.name}>{item.name}</option>));
    
-
+//    window.onload = optionOneSelected();  
+//    window.onload = optionTwoSelected();  
     return(
         <>
            <div className="BodyBox Comparisons">
@@ -227,7 +224,10 @@ function selectedWinner(){
             <div className='contentContainer'>
                 <div className='left-panel'>
                     <div className='selectOption'>
-                        <select onChange={optionOneSelected} ref={pokemonOne}>
+                        <select onChange={optionOneSelected} ref={pokemonOne} onLoad= {() => this.optionOneSelected()}>
+                        <option selected="selected" value="charmander">
+                            charmander
+                            </option>
                             {pokemonOptions}
                         </select>
                     </div>
@@ -251,17 +251,22 @@ function selectedWinner(){
                         <div className="BarGraph_Comp">
                             <ChartOne value1={pokemonOneData} labels={dataLabels}/>
                         </div>
+                    </div>
 
                         <div className='abilityGraph'>
                         <div className="BarGraph_Comp Doughnut">
-                            <div className="Doughnut">
-                            <DoughnutOne value1={pokeNameVal}/>
+                        <h3>Catch Rate</h3>
+                            <div className="Doughnut">   
+                            <DoughnutOne value1={pokemonOne}/>
                             </div>
+                            <h5 className="perc">00%</h5>
+                            <hr class="underNum"/>
+                            <p>Placeholder Text</p>
                         </div>
                         </div>
 
 
-                    </div>
+                  
                    
 
 
@@ -281,6 +286,9 @@ function selectedWinner(){
                 <div className='right-panel'>
                     <div className='selectOption'>
                         <select onChange={optionTwoSelected}  ref={pokemonTwo}>
+                        <option selected="selected" value="ditto">
+                            ditto
+                            </option>
                             {pokemonOptions}
                         </select>
                     </div>
@@ -302,9 +310,22 @@ function selectedWinner(){
                     </div>
                     <div className='abilityGraph'>
                         <div className="BarGraph_Comp">
+                            
                             <CompBarChart2 value={pokemonTwoData} labels={dataLabels}/>
                         </div>
                     </div>
+
+                    <div className='abilityGraph'>
+                        <div className="BarGraph_Comp Doughnut">
+                        <h3>Catch Rate</h3>
+                            <div className="Doughnut two">
+                            <DoughnutTwo value1={pokemonTwo}/>
+                            </div>
+                            <h5 className="perc">{props.numVal}</h5>
+                            <hr class="underNum"/>
+                            <p>Placeholder Text</p>
+                        </div>
+                        </div>
                   
 
 

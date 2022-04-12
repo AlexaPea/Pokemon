@@ -9,8 +9,8 @@ const ChartFive = (props) =>{
 
   
 
-  console.log(props.exValue);
-  console.log(props.levelValue);
+  console.log(props.val1);
+  console.log(props.val2);
 
 
 
@@ -20,7 +20,7 @@ const ChartFive = (props) =>{
               {/* <h3>Growth Rates</h3> */}
               
   
-            
+              <div className="SRC Elections">
               <Line 
 
                 
@@ -35,7 +35,8 @@ const ChartFive = (props) =>{
                     data: (props.val1),
                     fill: false,
                     borderColor: 'white',
-                    tension: 0.1
+                    tension: 0.1,
+                    pointRadius: 0,
                       
                   },
                  
@@ -53,6 +54,8 @@ const ChartFive = (props) =>{
              
 
               options={{ maintainAspectRatio: true,
+              
+ 
                 responsive: true,
                 plugins: {  // 'legend' now within object 'plugins {}'
                   legend: {
@@ -79,6 +82,7 @@ const ChartFive = (props) =>{
                   }
                 },
                 scales: {
+                  
                   y: { // defining min and max so hiding the dataset does not change scale range
                     min: 0,
                     max: 100
@@ -90,9 +94,16 @@ const ChartFive = (props) =>{
                   scales: {
       
                       x: {
+                      min:0,
+                      max:100,
                         
                       ticks: {
-                        color: 'white'
+                        color: 'white',
+                        beginAtZero: true,
+                        stepSize: 10,
+                        // suggestedMax: 10,
+                        // autoSkip:false
+                       
                       },
                           grid: {
                               display:false,
@@ -133,6 +144,7 @@ const ChartFive = (props) =>{
   
   
   
+          </div>
           </>
     );
 
