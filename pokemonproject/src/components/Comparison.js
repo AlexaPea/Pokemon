@@ -279,8 +279,8 @@ useEffect(() => {
                     <table>
                         <tr class="rowOne">
                             <td><p>{pokemonType}</p><p className='title'>Type</p></td>
-                            <td><p>{pokemonHeight}<p className='smalltxt'>Kg</p></p><p className='title'>Height</p></td>
-                            <td className='last'><p>{pokemonWeight}<p className='smalltxt'>m</p></p><p className='title'>Weight</p></td>
+                            <td><p>{pokemonHeight}<p className='smalltxt'>Kg</p></p><p className='title'>Weight</p></td>
+                            <td className='last'><p>{pokemonWeight}<p className='smalltxt'>m</p></p><p className='title'>Height</p></td>
                         </tr>
                     </table>
 
@@ -346,8 +346,8 @@ useEffect(() => {
                     <table>
                         <tr class="rowOne">
                             <td><p>{pokemonType2}</p><p className='title'>Type</p></td>
-                            <td><p>{pokemonHeight2}<p className='smalltxt'>Kg</p></p><p className='title'>Height</p></td>
-                            <td className='last'><p>{pokemonWeight2}<p className='smalltxt'>m</p></p><p className='title'>Weight</p></td>
+                            <td><p>{pokemonHeight2}<p className='smalltxt'>Kg</p></p><p className='title'>Weight</p></td>
+                            <td className='last'><p>{pokemonWeight2}<p className='smalltxt'>m</p></p><p className='title'>Height</p></td>
                         </tr>
                     </table>
 

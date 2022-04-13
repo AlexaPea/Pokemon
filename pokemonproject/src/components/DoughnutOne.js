@@ -55,7 +55,7 @@ const ChartTwo = (props) =>{
           else if(percentageRate <= 80){
             moreinfo = "This is Pokemon is easy to catch!";
             setMoreInfoAdd(moreinfo);
-          }else{
+          }else if(percentageRate <= 100){
             moreinfo = "This Pokemon is impossible to miss!";
             setMoreInfoAdd(moreinfo);
           }
