@@ -663,10 +663,11 @@ td{
 .RadarGraph_Comp.winnerBlock h5{
 font-weight: lighter;
 text-align: center;
+font-size:25px;
 }
 
 .RadarGraph_Comp.winnerBlock h3{
-  font-size:30px;
+  font-size:40px;
   text-align: center;
   text-transform: capitalize;
   }
@@ -689,7 +690,8 @@ text-align: center;
 
   .Doughnut h3{
     text-align: center;
-    font-weight: lighter
+    font-weight: lighter;
+    
   }
 
   .Doughnut h5{
@@ -698,7 +700,7 @@ text-align: center;
     font-weight: lighter;
     font-size:50px;
     padding:10px;
-    
+    padding-right: 20px;
   }
 
   .underNum{
@@ -770,6 +772,13 @@ text-align: center;
   background-color: #2b2b2b;
 
 }
+.winnerLine{
+  width: 150px;
+  height:0.5px;
+  border: 0px solid #2b2b2b;
+  background-color: #2b2b2b;
+  margin: 0 auto;
+}
 
 .learnMore h3{
   font-weight: 450;
@@ -792,4 +801,30 @@ text-align: center;
 
 ::-webkit-scrollbar{width:0px;border-left:0px solid #E6ECF8;}
 ::-webkit-scrollbar-thumb{background-color:#E6ECF8;}
+
+
+.RadarGraph_Comp.RadarGraph_Comp.winnerBlock{
+  background-image:linear-gradient(to bottom, rgba(235, 235, 235, 0.8) 100%,rgba(235, 235, 235, 0.8) 100%),  url(./Images/winner.jpg) ;
+  background-size: contain;
+}
+
+.RadarGraph_Comp.rem{
+  height: 150px;
+  background-color: #E9C46A;
+  color: #fff;
+}
+
+.RadarGraph_Comp.rem h3{
+  text-align: center;
+  font-weight: 450;
+  margin-top: 15px;
+ 
+}
+.RadarGraph_Comp.rem p{
+  margin-top: 15px;
+  text-align: center;
+  font-weight: lighter;
+ 
+ 
+}
 

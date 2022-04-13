@@ -167,7 +167,7 @@ Once I had a clear concept for the website I wanted to achieve, I began creating
 I then gained UI and branding inspiration using Pinterest, Behance and Dribble. I found myself gravitating to clean, simplistic yet playful designs which I felt would compliment my API data and create a memorable branding for the website.
 
 
-![image8][pokemonproject/src/Images/Ideation/process.png]
+![image8](pokemonproject/src/Images/Ideation/process.png)
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process

@@ -10,6 +10,7 @@ import DoughnutTwo from './DoughnutTwo';
 
 
 const Comparisons = (props) => {
+    
 
     const pokemonOne = useRef('charmander');
     const pokeNameVal = pokemonOne;
@@ -37,13 +38,14 @@ const Comparisons = (props) => {
     const[pokemonOneData, setPokemonOneData] = useState();
     const[pokemonTwoData, setPokemonTwoData] = useState();
     const[dataLabels, setDataLabels] = useState();
-    const[pokeOneTotal, setPokeOneTotal] = useState();
-    const[pokeTwoTotal, setPokeTwoTotal] = useState();
-    const[pokemonWinner, setPokemonWinner] = useState();
+    const[pokeOneTotal, setPokeOneTotal] = useState('22');
+    const[pokeTwoTotal, setPokeTwoTotal] = useState('10');
+    const[pokemonWinner, setPokemonWinner] = useState('charmander');
     
    
 
     function optionOneSelected(){
+       
         console.log('selected');
         axios.get('https://pokeapi.co/api/v2/pokemon/'+ pokemonOne.current.value)
         .then((res)=>{
@@ -82,16 +84,17 @@ const Comparisons = (props) => {
 
               setPokemonOneData(pokemonOneDataList);
               setDataLabels(labels);
+              selectedWinner();
+              
           
-              selectedWinner(pokeOneTotal,pokeTwoTotal);
-          
-        //   selectedWinner();
+    
     
         })
 
 
 }
 function optionTwoSelected(){
+    
     console.log('selected2');
     axios.get('https://pokeapi.co/api/v2/pokemon/' + pokemonTwo.current.value)
     .then((res)=>{
@@ -106,7 +109,7 @@ function optionTwoSelected(){
       let name2 = data.forms[0].name;
       let hp2 = data.stats[0].base_stat;
 
-    //   console.log(type2)
+   
 
       setPokemonType2(type2);
       setPokemonId2(id2);
@@ -115,17 +118,6 @@ function optionTwoSelected(){
       setPokemonName2(name2);
       setPokemonHp2(hp2);
 
-
-    //   let pokemonTwoDataList= ({
-    //     hp: data.stats[0].base_stat,
-    //     Attack: data.stats[1].base_stat,
-    //     Defense: data.stats[2].base_stat,
-    //     SpecialAttack: data.stats[3].base_stat,
-    //     SpecialDefense: data.stats[4].base_stat,
-    //     Speed: data.stats[5].base_stat,
-  
-
-    // })
 
     let sum=0;
     sum= data.stats[0].base_stat+ data.stats[1].base_stat+ data.stats[2].base_stat+ data.stats[3].base_stat+data.stats[4].base_stat+data.stats[5].base_stat;
@@ -136,8 +128,8 @@ function optionTwoSelected(){
       ];
 
     setPokemonTwoData(pokemonTwoDataList);
-      
-    selectedWinner(pokeOneTotal,pokeTwoTotal);
+    selectedWinner();
+    
 
     })
 
@@ -146,7 +138,6 @@ function optionTwoSelected(){
  
 
 
-    // selectedWinner();
 
 
     
@@ -154,6 +145,9 @@ function optionTwoSelected(){
 
 }
 function selectedWinner(){
+
+    console.log(pokemonName+' '+pokeOneTotal);
+    console.log(pokemonName2+' '+pokeTwoTotal);
     if(pokeOneTotal>pokeTwoTotal){
         setPokemonWinner(pokemonName);
     }else if(pokeOneTotal<pokeTwoTotal){
@@ -207,12 +201,13 @@ function selectedWinner(){
       }, [])
 
      
-     console.log((props.numVal));
+     
   
    let pokemonOptions = pokemonListed.map((item) =>  (<option key={item.key}  value={item.name}>{item.name}</option>));
    
-//    window.onload = optionOneSelected();  
-//    window.onload = optionTwoSelected();  
+ console.log((props.percentNum));
+
+
     return(
         <>
            <div className="BodyBox Comparisons">
@@ -257,11 +252,12 @@ function selectedWinner(){
                         <div className="BarGraph_Comp Doughnut">
                         <h3>Catch Rate</h3>
                             <div className="Doughnut">   
-                            <DoughnutOne value1={pokemonOne}/>
+                            <DoughnutOne nameForRate={pokemonName}/>
                             </div>
-                            <h5 className="perc">00%</h5>
+                            <h5 className="perc"> 25% </h5>
                             <hr class="underNum"/>
-                            <p>Placeholder Text</p>
+                            <br/>
+                            <p>This pokemon is very difficult to catch!</p>
                         </div>
                         </div>
 
@@ -278,7 +274,12 @@ function selectedWinner(){
                     </div>
                     <div className="RadarGraph_Comp winnerBlock">
                         <h3>{pokemonWinner}</h3>
+                        <hr className='winnerLine'/>
                         <h5>winner</h5>
+                    </div>
+                    <div className="RadarGraph_Comp rem">
+                        <h3>But Remember!</h3>
+                        <p>If your Pokemon loses, they will just be sent to nurse Joy to get some rest for their next battle!</p>
                     </div>
 
                 </div>
@@ -319,11 +320,12 @@ function selectedWinner(){
                         <div className="BarGraph_Comp Doughnut">
                         <h3>Catch Rate</h3>
                             <div className="Doughnut two">
-                            <DoughnutTwo value1={pokemonTwo}/>
+                            <DoughnutTwo numValueTwo={pokemonName2}/>
                             </div>
-                            <h5 className="perc">{props.numVal}</h5>
+                            <h5 className="perc"> {props.percentNum} % </h5>
                             <hr class="underNum"/>
-                            <p>Placeholder Text</p>
+                            <br/>
+                            <p>{props.infoAdd}</p>
                         </div>
                         </div>
                   

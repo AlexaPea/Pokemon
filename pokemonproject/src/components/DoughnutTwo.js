@@ -10,16 +10,19 @@ const ChartTwo = (props) =>{
 
     const [captureRate, setCaptureRate] = useState([]);
     const [percentageRate, setPercentageRate] = useState();
+    const [moreInfoAdd, setMoreInfoAdd] = useState();
     // const [lossRate, setLossRate] = useState();
 
     console.log("run");
 
-    useEffect(() => {
+    
 
         let capture=[];
         let notCapture=0;
-        console.log((props.value1).current.value);
-        axios.get('https://pokeapi.co/api/v2/pokemon-species/'+((props.value1).current.value)+'/')
+        let moreinfo="";
+       
+        useEffect(() => {
+        axios.get('https://pokeapi.co/api/v2/pokemon-species/'+((props.numValueTwo))+'/')
         .then((res)=>{
     
           let data=res.data;
@@ -27,17 +30,29 @@ const ChartTwo = (props) =>{
           capture[0] = data.capture_rate;
           capture[1] = 255 - (data.capture_rate);
 
-          let percentage = Math.round(((data.capture_rate)/255)*100);
-
+       
+        
          
-        //   console.log(data.capture_rate);
-        //  console.log("run");
-        //   notCapture = 255-(capture);
-
           setCaptureRate(capture);
-          setPercentageRate(percentage);
-          <Comparisons numVal={this.percentageRate}/>;
-      
+
+          let percentage = Math.round(((data.capture_rate)/255)*100);
+          setPercentageRate(percentageRate);
+
+          if(percentage < 51){
+            moreinfo = "This Pokemon is very difficult to catch!"
+          }else if(percentage < 101){
+            moreinfo = "This is not the easiest Pokemon to catch!"
+          }else if(percentage < 151){
+            moreinfo = "This is Pokemon is easier to catch!"
+          }
+          else if(percentage < 200){
+            moreinfo = "This is Pokemon is easy to catch!"
+          }else{
+            moreinfo = "This is Pokemon is impossible to miss!"
+          }
+
+          setMoreInfoAdd(moreinfo);
+          <Comparisons percentNum={percentageRate} infoAdd={moreInfoAdd}/>;
     
         })
 
@@ -45,9 +60,9 @@ const ChartTwo = (props) =>{
         
         
       
-      }, []);
+      }, [props.numValueTwo]);
 
-      console.log(percentageRate);
+   
      
 
 

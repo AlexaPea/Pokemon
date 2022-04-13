@@ -1,4 +1,4 @@
-import { Doughnut } from "react-chartjs-2";
+import { Doughnut, Bar } from "react-chartjs-2";
 import 'chart.js/auto';
 import React from "react";
 import {useState, useRef, useEffect} from 'react';
@@ -12,33 +12,33 @@ const ChartTwo = (props) =>{
 
     console.log("run");
 
-    useEffect(() => {
-
+   
+    
         let capture=[];
         let notCapture=0;
-        console.log((props.value1).current.value);
-        axios.get('https://pokeapi.co/api/v2/pokemon-species/'+((props.value1).current.value)+'/')
+        console.log((props.nameForRate));
+
+        useEffect(() => {
+        axios.get('https://pokeapi.co/api/v2/pokemon-species/'+(props.nameForRate)+'/')
         .then((res)=>{
     
           let data=res.data;
 
           capture[0] = data.capture_rate;
           capture[1] = 255 - (data.capture_rate);
-        //   console.log(data.capture_rate);
-        //  console.log("run");
-        //   notCapture = 255-(capture);
 
-          setCaptureRate(capture);
+       
+        
          
-      
+          setCaptureRate(capture);
     
-        })
+        });
 
         
-        
+        // console.log("here it is again " + captureRate[0]);
         
       
-      }, [])
+       }, [props.nameForRate]);
 
 
 
@@ -81,7 +81,6 @@ const ChartTwo = (props) =>{
               options={{maintainAspectRatio: true,
                 responsive: true,
              
-                width:200,
                 cutout: 60,
             
                 plugins: {
