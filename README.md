@@ -121,7 +121,8 @@ Run the following in the command-line to install all the required dependencies:
 ## Features and Functionality
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
-![image2](https://raw.githubusercontent.com/AlexaPea/Pokemon/main/src/Images/mockups/mockup1.png)
+![image2](https://github.com/AlexaPea/Pokemon/blob/293a15830e731dbce9af71cda6e3b2561e821caa/pokemonproject/src/Images/mockups/mockup1.png)
+![image2](pokemonproject/src/Images/mockups/mockup1.png)
 
 
 ### All The PokeApi Data Your Heart Desires! 
@@ -188,7 +189,6 @@ I then installed the necesarry libraries and plugins required for the website, t
 * Utilized React `Charts.JS` dependency for Data visualization
 * Implemented Routing with `React-Router v6`.
 * API End Point: https://pokeapi.co/ 
-* `Plugin` for this.
 
 
 #### Highlights
@@ -245,7 +245,7 @@ See the [open issues](https://github.com/AlexaPea/Pokemon/issues) for a list of 
 <!-- AUTHORS -->
 ## Authors
 
-* **Alexa Pettitt** - [MikeMaynard14](https://github.com/AlexaPea)
+* **Alexa Pettitt** - [AlexaPea](https://github.com/AlexaPea)
 
 <!-- LICENSE -->
 ## License
@@ -261,8 +261,8 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
+<!-- * [Resource Name](path/to/resource)
 * [Resource Name](path/to/resource)
 * [Resource Name](path/to/resource)
 * [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
-* [Resource Name](path/to/resource)
+* [Resource Name](path/to/resource) -->
