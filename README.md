@@ -121,7 +121,8 @@ Run the following in the command-line to install all the required dependencies:
 ## Features and Functionality
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
-![image2](https://raw.githubusercontent.com/MikeMaynard14/termoneexample/main/src/assets/mockup.jpg)
+![image2](https://raw.githubusercontent.com/AlexaPea/Pokemon/main/src/Images/mockups/mockup1.png)
+
 
 ### All The PokeApi Data Your Heart Desires! 
 Using the PokeApi, we have collected and communicated all relevant Pokemon data into once seemless react experience!
@@ -216,12 +217,12 @@ To see a run through of the application, click below:
 [View Demonstration](path/to/video/demonstration)
 
 
-See the [open issues](https://github.com/MikeMaynard14/termoneexample/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/AlexaPea/Pokemon/issues) for a list of proposed features (and known issues).
 
 <!-- AUTHORS -->
 ## Authors
 
-* **Your Name & Surname** - [MikeMaynard14](https://github.com/MikeMaynard14)
+* **Alexa Pettitt** - [MikeMaynard14](https://github.com/AlexaPea)
 
 <!-- LICENSE -->
 ## License
@@ -231,8 +232,8 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Your Name & Surname** - [email@address](mailto:email@address) - [@instagram_handle](https://www.instagram.com/instagram_handle/) 
-* **Project Link** - https://github.com/MikeMaynard14/termoneexample
+* **Alexa Pettitt** - [21100290@virtualwindow.co.za](mailto:21100290@virtualwindow.co.za) - [@instagram_handle](https://www.instagram.com/instagram_handle/) 
+* **Project Link** - https://github.com/AlexaPea/Pokemon
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
