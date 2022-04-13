@@ -83,9 +83,9 @@ const Comparisons = (props) => {
               setPokemonOneData(pokemonOneDataList);
               setDataLabels(labels);
           
-
+              selectedWinner(pokeOneTotal,pokeTwoTotal);
           
-          selectedWinner();
+        //   selectedWinner();
     
         })
 
@@ -137,7 +137,7 @@ function optionTwoSelected(){
 
     setPokemonTwoData(pokemonTwoDataList);
       
-      
+    selectedWinner(pokeOneTotal,pokeTwoTotal);
 
     })
 
@@ -146,7 +146,7 @@ function optionTwoSelected(){
  
 
 
-    selectedWinner();
+    // selectedWinner();
 
 
     
@@ -164,7 +164,7 @@ function selectedWinner(){
 
 }
     useEffect(() => {
-
+        selectedWinner(pokeOneTotal,pokeTwoTotal);
         //Runs function immidiatly to put placeholder data
         optionOneSelected();
         optionTwoSelected();
