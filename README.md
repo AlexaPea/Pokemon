@@ -20,7 +20,7 @@
 <p align="center">
 
   <a href="https://github.com/AlexaPea/Pokemon">
-    <img src="src/Images/Char.png" alt="Logo" width="140" height="140">
+    <img src="pokemonproject/src/Images/Char.png" alt="Logo" width="140" height="140">
   </a>
   
   <h3 align="center">Poke-Pal</h3>
