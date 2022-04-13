@@ -84,7 +84,7 @@ const Comparisons = (props) => {
 
               setPokemonOneData(pokemonOneDataList);
               setDataLabels(labels);
-              selectedWinner();
+           
               
           
     
@@ -128,7 +128,7 @@ function optionTwoSelected(){
       ];
 
     setPokemonTwoData(pokemonTwoDataList);
-    selectedWinner();
+   
     
 
     })
@@ -144,10 +144,62 @@ function optionTwoSelected(){
 
 
 }
-function selectedWinner(){
 
-    console.log(pokemonName+' '+pokeOneTotal);
-    console.log(pokemonName2+' '+pokeTwoTotal);
+useEffect(() => {
+    // selectedWinner(pokeOneTotal, pokeTwoTotal);
+        //Runs function immidiatly to put placeholder data
+        optionOneSelected();
+        optionTwoSelected();
+
+        //gets all pokemon data
+        axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1100')
+        .then((res)=>{
+    
+          let data=res.data;
+          console.log(data);
+
+          const pokemonList = [];
+
+          for(let i=0; i<1000; i++){
+              pokemonList.push({
+                  key: i,
+                  name: data.results[i].name,
+          })}
+
+          setPokemonListed(pokemonList);
+         
+                   
+          
+    
+        })
+        
+    let pokemon1Name = pokemonOne.current.value;
+    console.log(pokemon1Name);
+    let pokemon2Name = pokemonTwo.current.value;
+    console.log(pokemon2Name);
+    console.log(pokemonListed);
+
+
+    
+       
+
+        console.log(pokemonOneData);
+        
+      
+      }, [])
+// function selectedWinner(){
+
+//     console.log(pokemonName+' '+pokeOneTotal);
+//     console.log(pokemonName2+' '+pokeTwoTotal);
+//     if(pokeOneTotal>pokeTwoTotal){
+//         setPokemonWinner(pokemonName);
+//     }else if(pokeOneTotal<pokeTwoTotal){
+//         setPokemonWinner(pokemonName2);
+//     }else{
+//         setPokemonWinner("Draw");
+//     }
+
+useEffect(() => {
     if(pokeOneTotal>pokeTwoTotal){
         setPokemonWinner(pokemonName);
     }else if(pokeOneTotal<pokeTwoTotal){
@@ -155,10 +207,11 @@ function selectedWinner(){
     }else{
         setPokemonWinner("Draw");
     }
+ }, [pokeOneTotal, pokeTwoTotal])
 
-}
+
     useEffect(() => {
-        selectedWinner(pokeOneTotal,pokeTwoTotal);
+        // selectedWinner(pokeOneTotal,pokeTwoTotal);
         //Runs function immidiatly to put placeholder data
         optionOneSelected();
         optionTwoSelected();

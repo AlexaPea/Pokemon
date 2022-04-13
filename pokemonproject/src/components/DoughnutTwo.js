@@ -9,8 +9,8 @@ import Comparisons from './Comparison.js'
 const ChartTwo = (props) =>{
 
     const [captureRate, setCaptureRate] = useState([]);
-    const [percentageRate, setPercentageRate] = useState();
-    const [moreInfoAdd, setMoreInfoAdd] = useState();
+    const [percentageRate, setPercentageRate] = useState('25');
+    const [moreInfoAdd, setMoreInfoAdd] = useState("This Pokemon is very difficult to catch!");
     // const [lossRate, setLossRate] = useState();
 
     console.log("run");
@@ -39,30 +39,30 @@ const ChartTwo = (props) =>{
           setPercentageRate(percentageRate);
 
           if(percentage < 51){
-            moreinfo = "This Pokemon is very difficult to catch!"
+            moreinfo = "This Pokemon is very difficult to catch!";
           }else if(percentage < 101){
-            moreinfo = "This is not the easiest Pokemon to catch!"
+            moreinfo = "This is not the easiest Pokemon to catch!";
           }else if(percentage < 151){
-            moreinfo = "This is Pokemon is easier to catch!"
+            moreinfo = "This is Pokemon is easier to catch!";
           }
           else if(percentage < 200){
-            moreinfo = "This is Pokemon is easy to catch!"
+            moreinfo = "This is Pokemon is easy to catch!";
           }else{
-            moreinfo = "This is Pokemon is impossible to miss!"
+            moreinfo = "This is Pokemon is impossible to miss!";
           }
 
           setMoreInfoAdd(moreinfo);
-          <Comparisons percentNum={percentageRate} infoAdd={moreInfoAdd}/>;
+         
     
-        })
+        });
 
         
         
         
-      
+        
       }, [props.numValueTwo]);
 
-   
+      <Comparisons percentNum={percentageRate} infoAdd={moreInfoAdd}/>;
      
 
 
