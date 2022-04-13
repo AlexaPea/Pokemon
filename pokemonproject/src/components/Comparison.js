@@ -188,17 +188,7 @@ useEffect(() => {
       
       }, [])
 // function selectedWinner(){
-
-//     console.log(pokemonName+' '+pokeOneTotal);
-//     console.log(pokemonName2+' '+pokeTwoTotal);
-//     if(pokeOneTotal>pokeTwoTotal){
-//         setPokemonWinner(pokemonName);
-//     }else if(pokeOneTotal<pokeTwoTotal){
-//         setPokemonWinner(pokemonName2);
-//     }else{
-//         setPokemonWinner("Draw");
-//     }
-
+//outputs winner between selected pokemon
 useEffect(() => {
     if(pokeOneTotal>pokeTwoTotal){
         setPokemonWinner(pokemonName);
@@ -307,10 +297,10 @@ useEffect(() => {
                             <div className="Doughnut">   
                             <DoughnutOne nameForRate={pokemonName}/>
                             </div>
-                            <h5 className="perc"> 25% </h5>
+                            {/* <h5 className="perc"> 25% </h5>
                             <hr class="underNum"/>
                             <br/>
-                            <p>This pokemon is very difficult to catch!</p>
+                            <p>This pokemon is very difficult to catch!</p> */}
                         </div>
                         </div>
 
@@ -375,10 +365,10 @@ useEffect(() => {
                             <div className="Doughnut two">
                             <DoughnutTwo numValueTwo={pokemonName2}/>
                             </div>
-                            <h5 className="perc"> {props.percentNum} % </h5>
+                            {/* <h5 className="perc"> {props.percentNum} % </h5>
                             <hr class="underNum"/>
                             <br/>
-                            <p>{props.infoAdd}</p>
+                            <p>{props.infoAdd}</p> */}
                         </div>
                         </div>
                   

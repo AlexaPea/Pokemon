@@ -9,8 +9,8 @@ import Comparisons from './Comparison.js'
 const ChartTwo = (props) =>{
 
     const [captureRate, setCaptureRate] = useState([]);
-    const [percentageRate, setPercentageRate] = useState('25');
-    const [moreInfoAdd, setMoreInfoAdd] = useState("This Pokemon is very difficult to catch!");
+    const [percentageRate, setPercentageRate] = useState();
+    const [moreInfoAdd, setMoreInfoAdd] = useState();
     // const [lossRate, setLossRate] = useState();
 
     console.log("run");
@@ -19,7 +19,8 @@ const ChartTwo = (props) =>{
 
         let capture=[];
         let notCapture=0;
-        let moreinfo="";
+        
+        let percentage =0;
        
         useEffect(() => {
         axios.get('https://pokeapi.co/api/v2/pokemon-species/'+((props.numValueTwo))+'/')
@@ -35,23 +36,31 @@ const ChartTwo = (props) =>{
          
           setCaptureRate(capture);
 
-          let percentage = Math.round(((data.capture_rate)/255)*100);
-          setPercentageRate(percentageRate);
+          percentage = Math.round(((data.capture_rate)/255)*100);
+          console.log(percentage);
+          setPercentageRate(percentage);
+          let moreinfo='';
 
-          if(percentage < 51){
+
+          if(percentageRate <= 20){
             moreinfo = "This Pokemon is very difficult to catch!";
-          }else if(percentage < 101){
+            setMoreInfoAdd(moreinfo);
+          }else if(percentageRate <= 50){
             moreinfo = "This is not the easiest Pokemon to catch!";
-          }else if(percentage < 151){
+            setMoreInfoAdd(moreinfo);
+          }else if(percentageRate <= 70){
             moreinfo = "This is Pokemon is easier to catch!";
+            setMoreInfoAdd(moreinfo);
           }
-          else if(percentage < 200){
+          else if(percentageRate <= 80){
             moreinfo = "This is Pokemon is easy to catch!";
+            setMoreInfoAdd(moreinfo);
           }else{
-            moreinfo = "This is Pokemon is impossible to miss!";
+            moreinfo = "This Pokemon is impossible to miss!";
+            setMoreInfoAdd(moreinfo);
           }
 
-          setMoreInfoAdd(moreinfo);
+      
          
     
         });
@@ -64,7 +73,7 @@ const ChartTwo = (props) =>{
 
       <Comparisons percentNum={percentageRate} infoAdd={moreInfoAdd}/>;
      
-
+console.log(percentageRate);
 
     return(
         <>
@@ -114,6 +123,12 @@ const ChartTwo = (props) =>{
               
               
               />
+              <div className="dynaText">
+                 <h5 className="perc"> {percentageRate} % </h5>
+                            <hr class="underNum"/>
+                            <br/>
+                            <p>{moreInfoAdd}</p>
+                            </div>
   
               </div>
   

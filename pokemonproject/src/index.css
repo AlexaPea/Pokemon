@@ -331,7 +331,7 @@ a{
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
   float: left;
-  margin-left: 15px;
+  margin-left: 10px;
   margin-top: -178px;
   box-shadow:
   0  5px 10px rgba(154,160,185,0.05),
@@ -827,4 +827,20 @@ font-size:25px;
  
  
 }
+
+.dynaText{
+  float: left;
+  width: 180px;
+  margin-top: -200px;
+  margin-left: 205px;
+  
+}
+.dynaText p{
+  float: left;
+  width: 120px;
+  font-size: 16px;
+  margin-top: 5px;
+
+  
+} 
 
