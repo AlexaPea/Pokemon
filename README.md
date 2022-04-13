@@ -6,10 +6,10 @@
 <!-- Repository Information & Links-->
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/MikeMaynard14/termoneexample)
-![GitHub watchers](https://img.shields.io/github/watchers/MikeMaynard14/termoneexample)
-![GitHub language count](https://img.shields.io/github/languages/count/MikeMaynard14/termoneexample)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/MikeMaynard14/termoneexample)
+![GitHub repo size](https://img.shields.io/github/repo-size/AlexaPea/Pokemon)
+![GitHub watchers](https://img.shields.io/github/watchers/AlexaPea/Pokemon)
+![GitHub language count](https://img.shields.io/github/languages/count/AlexaPea/Pokemon)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AlexaPea/Pokemon)
 
 
 <!-- HEADER SECTION -->
@@ -20,7 +20,7 @@
 <p align="center">
 
   <a href="https://github.com/AlexaPea/Pokemon">
-    <img src="src/Images/char.png" alt="Logo" width="140" height="140">
+    <img src="src/Images/Char.png" alt="Logo" width="140" height="140">
   </a>
   
   <h3 align="center">Poke-Pal</h3>
@@ -79,8 +79,8 @@ Poke-Pal, provides all Pokemon trainers with the information they need to become
 ### Built With
 
 * [React](https://reactjs.org/)
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
+* [Charts.js](https://www.chartjs.org/)
+* [PokeApi](https://pokeapi.co/)
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
@@ -123,9 +123,8 @@ Run the following in the command-line to install all the required dependencies:
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 ![image2](https://raw.githubusercontent.com/MikeMaynard14/termoneexample/main/src/assets/mockup.jpg)
 
-### All The Latest Space X Data! 
-
-Usding the Space X API, we have collected and collated all the most relevant Space X data into once seemless react experience!
+### All The PokeApi Data Your Heart Desires! 
+Using the PokeApi, we have collected and communicated all relevant Pokemon data into once seemless react experience!
 
 ![image3][image3]
 ### Feature 2
