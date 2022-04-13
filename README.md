@@ -154,14 +154,14 @@ The `Conceptual Process` is the set of actions, activities and research that was
 In order to begin my website ideation process, I first needed to choose an API. I chose to make use of PokeApi.
 
 
-![image5][pokemonproject/src/Images/Ideation/concept.png]
+![image5](pokemonproject/src/Images/Ideation/concept.png)
 <br>
 <!-- ![image6][image6] -->
 
 ### Wireframes
 Once I had a clear concept for the website I wanted to achieve, I began creating wireframes.
 
-![image7][pokemonproject/src/Images/Ideation/wireframes.png]
+![image7](pokemonproject/src/Images/Ideation/wireframes.png)
 
 ### Custom UI
 I then gained UI and branding inspiration using Pinterest, Behance and Dribble. I found myself gravitating to clean, simplistic yet playful designs which I felt would compliment my API data and create a memorable branding for the website.
@@ -227,9 +227,9 @@ What aspects of this final build contribute to the `Above And Beyond` Component 
 
 ### Mockups
 
-![image9][pokemonproject/src/Images/mockups/mockup2.png]
+![image9](pokemonproject/src/Images/mockups/mockup2.png)
 <br>
-![image10][pokemonproject/src/Images/mockups/mockup3.png]
+![image10](pokemonproject/src/Images/mockups/mockup3.png)
 
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
