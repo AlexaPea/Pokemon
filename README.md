@@ -70,7 +70,7 @@
 <!--PROJECT DESCRIPTION-->
 ## About the Project
 <!-- header image of project -->
-![image1][image1]
+![image1](pokemonproject/src/Images/Ideation/intro.png)
 
 ### Project Description
 
@@ -127,20 +127,20 @@ Run the following in the command-line to install all the required dependencies:
 ### All The PokeApi Data Your Heart Desires! 
 Using the PokeApi, we have collected and communicated all relevant Pokemon data into once seemless react experience!
 
-![image4][image4]
+
 ### View General Stats!
 The home page provides our fellow trainers with API generated content! Here they are able to view the basic knowledge needed to begin their journey!
 
-![image3][image3]
+
 ### Compare Any Two Pokemon!
 Poke-Pal allows you to select any two Pokemon of your choosing to compare! Here you are able to see each Pokemons statistics, catch rate, and who would win in battle!
 
-![image4][image4]
+
 ### View Growth Rates!
 The Timeline page provides users the opportunity to view the different Pokemon growth rates through graphs. As you toggle between different rate, relevent information will be provided!
 
 
-![image5][image5]
+
 
 
 <!-- CONCEPT PROCESS -->
@@ -167,7 +167,7 @@ Once I had a clear concept for the website I wanted to achieve, I began creating
 I then gained UI and branding inspiration using Pinterest, Behance and Dribble. I found myself gravitating to clean, simplistic yet playful designs which I felt would compliment my API data and create a memorable branding for the website.
 
 
-![image8][image8]
+![image8][pokemonproject/src/Images/Ideation/process.png]
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
